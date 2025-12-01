@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yabetse Tesfaye | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+
+<body>
+  <!-- CLEAN HEADER -->
+  <header>
+    <a href="index.html" class="logo">Yabetse</a>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About Me</a>
+    </nav>
+
+    <!-- Theme Toggle -->
+    <button id="theme-toggle">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+  </header>
+
+  <section class="home">
+    <div class="home-img">
+      <img id="profile-img" src="images/sticker.webp"
+           alt="Click to reveal profile"
+           onclick="toggleImage()" />
+    </div>
+
+    <div class="home-content">
+      <h1>Hi, I'm <span>Yabetse Tesfaye</span></h1>
+      <h3 class="typing-text">I'm a <span id="typing"></span></h3>
+      <p>As a dedicated 3rd-year Computer Science student at American College of Technology, I’m driven by curiosity and a deep enthusiasm for technology. I enjoy building user-friendly websites and continuously learning new tools and trends in the tech world.</p>
+
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/yabetse-tesfaye-bb4a0b2a1/"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/yabtesfu"><i class="fab fa-github"></i></a>
+        <a href="https://www.instagram.com/yab_tesfu/"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Yabetse Tesfaye. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

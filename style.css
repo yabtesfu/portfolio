@@ -1,0 +1,462 @@
+/* =================== IMPORT & BASE =================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+
+/* =================== HEADER =================== */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 8rem;
+  padding: 2rem 9%;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo {
+  font-size: 2rem;
+  color: #b74b4b;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+nav a {
+  font-size: 1.8rem;
+  color: white;
+  margin-left: 4rem;
+  font-weight: 500;
+  transition: 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a.active {
+  color: #b74b4b;
+  border-bottom: 3px solid #b74b4b;
+}
+
+/* =================== THEME TOGGLE =================== */
+#theme-toggle {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #b74b4b;
+  margin-left: 2rem;
+  transition: color 0.3s ease;
+}
+
+#theme-toggle:hover {
+  color: white;
+}
+
+/* =================== SECTION BASE =================== */
+section {
+  min-height: 100vh;
+  padding: 12rem 9% 5rem;
+  background-color: black;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* =================== HOME SECTION =================== */
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6rem;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.home-img img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 25px rgba(183, 75, 75, 0.5);
+  cursor: pointer;
+  transition: transform 0.4s ease, opacity 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.home-img img.flip {
+  transform: rotateY(180deg);
+  opacity: 0.6;
+}
+
+.home-content h1 {
+  font-size: 5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.home-content h3 {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.home-content p {
+  font-size: 1.6rem;
+  max-width: 500px;
+  margin: auto;
+  margin-bottom: 2rem;
+}
+
+span {
+  color: #b74b4b;
+}
+
+/* =================== TYPING EFFECT =================== */
+#typing::after {
+  content: "|";
+  animation: blink 1s infinite;
+  margin-left: 5px;
+  color: #b74b4b;
+  font-weight: bold;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* =================== SOCIAL ICONS =================== */
+.social-icons {
+  margin-top: 2rem;
+}
+
+.social-icons a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  border: 0.2rem solid #b74b4b;
+  border-radius: 50%;
+  margin: 0 1rem;
+  color: #b74b4b;
+  transition: all 0.3s ease;
+  font-size: 2rem;
+}
+
+.social-icons a:hover {
+  background-color: #b74b4b;
+  color: black;
+  transform: scale(1.2);
+}
+
+/* =================== FOOTER =================== */
+footer {
+  background-color: #111;
+  color: #ccc;
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.4rem;
+  margin-top: auto;
+}
+
+/* =================== ABOUT PAGE =================== */
+.about-section .aboutme-banner {
+  display: block;
+  max-width: 200px;
+  height: auto;
+  margin: 0 auto 2rem auto;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(183, 75, 75, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.about-section .aboutme-banner:hover {
+  transform: scale(1.03);
+}
+
+.about-section h1 {
+  font-size: 4.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+}
+
+.about-section h1:hover {
+  text-shadow: 0 0 8px rgba(183, 75, 75, 0.7);
+  transform: scale(1.03);
+}
+
+/* =================== TECHNICAL SKILLS =================== */
+.skills-bar {
+  margin-top: 2rem;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+.skill {
+  margin-bottom: 2rem;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.skill span {
+  display: block;
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.skill:hover span {
+  color: #b74b4b;
+  transform: scale(1.05);
+}
+
+.progress {
+  background-color: #333;
+  border-radius: 1rem;
+  overflow: hidden;
+  height: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.skill:hover .progress {
+  box-shadow: 0 0 10px rgba(183, 75, 75, 0.6);
+  transform: scale(1.02);
+}
+
+.fill {
+  height: 100%;
+  background-color: #b74b4b;
+  width: 0;
+  border-radius: 1rem;
+  animation: fillBar 2s ease forwards;
+  animation-delay: 0.3s;
+}
+
+.fill[style] {
+  width: var(--fill-width);
+}
+
+@keyframes fillBar {
+  from { width: 0; }
+  to { width: var(--fill-width); }
+}
+
+/* =================== PROJECTS =================== */
+.projects-section {
+  padding: 12rem 9% 5rem;
+  min-height: 100vh;
+  background-color: black;
+  color: white;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 4.5rem;
+  margin-bottom: 4rem;
+  transition: all 0.3s ease;
+  color: var(--text-color, #fff);
+}
+
+.section-title span {
+  color: #b74b4b;
+  transition: color 0.3s ease;
+}
+
+.section-title:hover {
+  transform: scale(1.05);
+  color: #b74b4b;
+}
+
+.section-title:hover span {
+  color: #fff;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+}
+
+.project-card {
+  background-color: #1c1c1c;
+  padding: 2rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 0 15px rgba(183, 75, 75, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px rgba(183, 75, 75, 0.2);
+}
+
+.project-image {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+  background-color: #2c2c2c;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.project-card h3 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: #b74b4b;
+}
+
+.project-card p {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.project-links .btn {
+  padding: 0.8rem 2rem;
+  font-size: 1.4rem;
+  background-color: transparent;
+  color: #b74b4b;
+  border: 2px solid #b74b4b;
+  border-radius: 2rem;
+  transition: all 0.3s ease;
+}
+
+.project-links .btn:hover {
+  background-color: #b74b4b;
+  color: black;
+}
+
+/* =================== STICKERS =================== */
+.sticker {
+  position: absolute;
+  width: 150px;
+  height: auto;
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.sticker:hover {
+  transform: scale(1.08);
+}
+
+.sticker-top-left {
+  top: 18%;
+  left: 3%;
+}
+
+.sticker-contact {
+  bottom: 45%;
+  right: 5%;
+}
+
+.sticker-skills {
+  bottom: 10%;
+  left: 5%;
+}
+
+/* =================== LIGHT THEME =================== */
+body.light-theme {
+  background-color: #f5f5f5;
+  color: #111;
+}
+
+body.light-theme section,
+body.light-theme .home,
+body.light-theme .about-section,
+body.light-theme .projects-section {
+  background-color: #f5f5f5;
+  color: #111;
+}
+
+body.light-theme header,
+.light-theme header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+body.light-theme footer {
+  background-color: #e9e9e9;
+  color: #111;
+}
+
+body.light-theme .social-icons a {
+  border-color: #b74b4b;
+  color: #b74b4b;
+}
+
+body.light-theme .social-icons a:hover {
+  background-color: #b74b4b;
+  color: white;
+}
+
+body.light-theme .progress {
+  background-color: #ddd;
+}
+
+body.light-theme .fill {
+  background-color: #b74b4b;
+}
+
+body.light-theme .skill span,
+body.light-theme .section-title,
+body.light-theme .home-content h1,
+body.light-theme .home-content h3,
+body.light-theme .home-content p,
+body.light-theme .about-section p {
+  color: #111;
+}
+
+body.light-theme .project-card {
+  background-color: #fff;
+  color: #111;
+  border: 1px solid #ddd;
+}
+
+body.light-theme nav a {
+  color: #222;
+}
+
+body.light-theme nav a:hover,
+body.light-theme nav a.active {
+  color: #b74b4b;
+  border-bottom: 3px solid #b74b4b;
+}
