@@ -25,7 +25,6 @@ body {
   transition: background 0.4s ease, color 0.4s ease;
 }
 
-
 /* =================== HEADER =================== */
 header {
   position: fixed;
@@ -378,20 +377,9 @@ footer {
   transform: scale(1.08);
 }
 
-.sticker-top-left {
-  top: 18%;
-  left: 3%;
-}
-
-.sticker-contact {
-  bottom: 45%;
-  right: 5%;
-}
-
-.sticker-skills {
-  bottom: 10%;
-  left: 5%;
-}
+.sticker-top-left { top: 18%; left: 3%; }
+.sticker-contact { bottom: 45%; right: 5%; }
+.sticker-skills { bottom: 10%; left: 5%; }
 
 /* =================== LIGHT THEME =================== */
 body.light-theme {
@@ -407,8 +395,7 @@ body.light-theme .projects-section {
   color: #111;
 }
 
-body.light-theme header,
-.light-theme header {
+body.light-theme header {
   background-color: #ffffff;
   border-bottom: 1px solid #ddd;
 }
@@ -416,6 +403,16 @@ body.light-theme header,
 body.light-theme footer {
   background-color: #e9e9e9;
   color: #111;
+}
+
+body.light-theme nav a {
+  color: #222;
+}
+
+body.light-theme nav a:hover,
+body.light-theme nav a.active {
+  color: #b74b4b;
+  border-bottom: 3px solid #b74b4b;
 }
 
 body.light-theme .social-icons a {
@@ -451,12 +448,61 @@ body.light-theme .project-card {
   border: 1px solid #ddd;
 }
 
-body.light-theme nav a {
-  color: #222;
+/* =================== RESPONSIVE =================== */
+@media (max-width: 1024px) {
+  html { font-size: 58%; }
 }
 
-body.light-theme nav a:hover,
-body.light-theme nav a.active {
-  color: #b74b4b;
-  border-bottom: 3px solid #b74b4b;
+@media (max-width: 768px) {
+  html { font-size: 55%; }
+
+  header {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem 5%;
+  }
+
+  nav a {
+    margin-left: 2rem;
+    font-size: 1.6rem;
+  }
+
+  .home {
+    flex-direction: column;
+    padding-top: 14rem;
+  }
+
+  .home-img img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .about-section h1 {
+    font-size: 3.6rem;
+  }
+
+  .sticker {
+    width: 100px;
+  }
+
+  .sticker-top-left { top: 10%; left: 2%; }
+  .sticker-contact { top: 65%; right: 2%; }
+  .sticker-skills { bottom: 5%; left: 2%; }
+}
+
+@media (max-width: 480px) {
+  html { font-size: 50%; }
+
+  nav a {
+    margin: 0 1rem;
+    display: inline-block;
+  }
+
+  .project-image {
+    height: 150px;
+  }
+
+  .section-title {
+    font-size: 3.6rem;
+  }
 }
