@@ -69,17 +69,22 @@ nav a.active {
 
 /* =================== THEME TOGGLE =================== */
 #theme-toggle {
-  background: none;
-  border: none;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 2000;
+  background-color: #b74b4b;
+  color: white;
+  padding: 1rem;
+  border-radius: 50%;
   font-size: 2rem;
-  cursor: pointer;
-  color: #b74b4b;
-  margin-left: 2rem;
-  transition: color 0.3s ease;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 #theme-toggle:hover {
-  color: white;
+  background-color: white;
+  color: #b74b4b;
 }
 
 /* =================== SECTION BASE =================== */
@@ -367,10 +372,11 @@ footer {
 /* =================== STICKERS =================== */
 .sticker {
   position: absolute;
-  width: 150px;
+  width: 120px;
   height: auto;
-  z-index: 2;
+  z-index: 1;
   transition: transform 0.3s ease;
+  opacity: 0.85;
 }
 
 .sticker:hover {
@@ -378,8 +384,8 @@ footer {
 }
 
 .sticker-top-left { top: 18%; left: 3%; }
-.sticker-contact { bottom: 45%; right: 5%; }
-.sticker-skills { bottom: 10%; left: 5%; }
+.sticker-contact { bottom: 50%; right: 2%; }
+.sticker-skills { bottom: 14%; left: 2%; }
 
 /* =================== LIGHT THEME =================== */
 body.light-theme {
@@ -449,12 +455,8 @@ body.light-theme .project-card {
 }
 
 /* =================== RESPONSIVE =================== */
-@media (max-width: 1024px) {
-  html { font-size: 58%; }
-}
-
 @media (max-width: 768px) {
-  html { font-size: 55%; }
+  html { font-size: 58%; }
 
   header {
     flex-direction: column;
@@ -482,12 +484,13 @@ body.light-theme .project-card {
   }
 
   .sticker {
-    width: 100px;
+    width: 80px;
+    z-index: 0;
   }
 
   .sticker-top-left { top: 10%; left: 2%; }
-  .sticker-contact { top: 65%; right: 2%; }
-  .sticker-skills { bottom: 5%; left: 2%; }
+  .sticker-contact { top: 65%; right: 1%; }
+  .sticker-skills { bottom: 8%; left: 1%; }
 }
 
 @media (max-width: 480px) {
@@ -504,5 +507,9 @@ body.light-theme .project-card {
 
   .section-title {
     font-size: 3.6rem;
+  }
+
+  .sticker {
+    display: none;
   }
 }
