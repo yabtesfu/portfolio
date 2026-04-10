@@ -1,8 +1,10 @@
 // Typing Animation
 const words = [
-  "Web Developer",
+  "Full Stack Developer",
   "Backend Developer",
-  "Web Designer",
+  "Mobile App Developer",
+  "AI/LLM Trainer",
+  "Web Developer",
   "Tech Enthusiast",
   "Software Developer"
 ];
