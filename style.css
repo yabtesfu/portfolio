@@ -97,27 +97,74 @@ nav a.active {
   text-shadow: 0 0 15px rgba(183, 75, 75, 0.3);
 }
 
-/* =================== THEME TOGGLE =================== */
-#theme-toggle {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  z-index: 2000;
-  background-color: #b74b4b;
-  color: white;
-  padding: 1rem;
-  border-radius: 50%;
-  font-size: 2rem;
+/* =================== THEME TOGGLE (Sliding Switch) =================== */
+.theme-switch {
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(0,0,0,0.4);
-  transition: all 0.3s ease;
+  user-select: none;
+  flex-shrink: 0;
 }
 
-#theme-toggle:hover {
-  background-color: white;
-  color: #b74b4b;
-  transform: rotate(20deg) scale(1.1);
-  text-shadow: 0 0 15px rgba(183, 75, 75, 0.5);
+.theme-switch-track {
+  position: relative;
+  width: 5.6rem;
+  height: 2.8rem;
+  background: linear-gradient(135deg, #1a1a2e, #2d2d44);
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.6rem;
+  transition: background 0.4s ease;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.4), 0 0 12px rgba(183, 75, 75, 0.15);
+}
+
+.theme-icon-moon,
+.theme-icon-sun {
+  font-size: 1.2rem;
+  z-index: 1;
+  transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.theme-icon-moon {
+  color: #c9c9ff;
+  opacity: 1;
+}
+
+.theme-icon-sun {
+  color: #ffb347;
+  opacity: 0.4;
+}
+
+.theme-switch-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 2.2rem;
+  height: 2.2rem;
+  background: linear-gradient(135deg, #b74b4b, #d46b6b);
+  border-radius: 50%;
+  transition: transform 0.4s cubic-bezier(0.68, -0.15, 0.32, 1.15);
+  box-shadow: 0 2px 8px rgba(183, 75, 75, 0.4);
+}
+
+.theme-switch.light .theme-switch-track {
+  background: linear-gradient(135deg, #e8d5b7, #f5e6cc);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.1), 0 0 12px rgba(255, 179, 71, 0.2);
+}
+
+.theme-switch.light .theme-icon-moon {
+  opacity: 0.4;
+}
+
+.theme-switch.light .theme-icon-sun {
+  opacity: 1;
+  color: #ff8c00;
+}
+
+.theme-switch.light .theme-switch-thumb {
+  transform: translateX(2.8rem);
+  background: linear-gradient(135deg, #ff8c00, #ffb347);
+  box-shadow: 0 2px 8px rgba(255, 140, 0, 0.4);
 }
 
 /* =================== SECTION BASE =================== */
@@ -138,36 +185,76 @@ section {
   text-align: center;
 }
 
-.home-img img {
+/* =================== 3D CARD FLIP IMAGE =================== */
+.image-card {
+  perspective: 1000px;
   width: 270px;
   height: 270px;
+  cursor: pointer;
+  position: relative;
+}
+
+.image-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+}
+
+.image-card-front,
+.image-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
   border-radius: 50%;
+  overflow: hidden;
+}
+
+.image-card-front img,
+.image-card-back img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  border-radius: 50%;
   box-shadow:
     0 0 30px rgba(183, 75, 75, 0.4),
     0 0 60px rgba(183, 75, 75, 0.15),
     inset 0 0 30px rgba(183, 75, 75, 0.05);
-  cursor: pointer;
-  transition: transform 0.4s ease, opacity 0.3s ease, box-shadow 0.4s ease;
-  transform-style: preserve-3d;
   animation: profileFloat 4s ease-in-out infinite;
 }
 
-@keyframes profileFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+.image-card-back {
+  transform: rotateY(180deg);
 }
 
-.home-img img:hover {
+.image-card:hover .image-card-front img,
+.image-card:hover .image-card-back img {
   box-shadow:
     0 0 40px rgba(183, 75, 75, 0.6),
     0 0 80px rgba(183, 75, 75, 0.25);
 }
 
-.home-img img.flip {
-  transform: rotateY(180deg);
-  opacity: 0.6;
-  animation: none;
+.flip-hint {
+  display: block;
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 1px;
+  animation: fadeInUp 1s ease 1s forwards;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-card:hover .flip-hint {
+  opacity: 0;
+}
+
+@keyframes profileFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
 .home-content h1 {
@@ -478,7 +565,6 @@ footer {
   border-color: rgba(183, 75, 75, 0.2);
 }
 
-/* Project Badge */
 .project-badge {
   position: absolute;
   top: 1.5rem;
@@ -516,7 +602,6 @@ footer {
   transform: scale(1.05);
 }
 
-/* Wedding placeholder */
 .wedding-placeholder {
   display: flex;
   align-items: center;
@@ -736,6 +821,10 @@ body.light-theme .wedding-placeholder {
   background: linear-gradient(135deg, #f5eef0, #faf0f0, #f5eef0);
 }
 
+body.light-theme .flip-hint {
+  color: rgba(0, 0, 0, 0.35);
+}
+
 /* =================== RESPONSIVE =================== */
 @media (max-width: 768px) {
   html { font-size: 55%; }
@@ -764,7 +853,7 @@ body.light-theme .wedding-placeholder {
     font-size: 2.2rem;
   }
 
-  .home-img img {
+  .image-card {
     width: 200px;
     height: 200px;
   }
@@ -800,5 +889,10 @@ body.light-theme .wedding-placeholder {
 
   .project-image {
     height: 150px;
+  }
+
+  .image-card {
+    width: 180px;
+    height: 180px;
   }
 }

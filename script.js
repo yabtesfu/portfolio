@@ -3,7 +3,6 @@ const words = [
   "Full Stack Developer",
   "Backend Developer",
   "Mobile App Developer",
-  "AI/LLM Trainer",
   "Web Developer",
   "Tech Enthusiast",
   "Software Developer"
@@ -17,6 +16,7 @@ let isDeleting = false;
 let delay = 120;
 
 function type() {
+  if (!typingSpan) return;
   const word = words[wordIndex];
   const currentText = isDeleting
     ? word.substring(0, charIndex--)
@@ -26,7 +26,7 @@ function type() {
 
   if (!isDeleting && charIndex === word.length + 1) {
     isDeleting = true;
-    setTimeout(type, 1500); // pause before deleting
+    setTimeout(type, 1500);
     return;
   }
 
@@ -40,44 +40,71 @@ function type() {
 
 document.addEventListener("DOMContentLoaded", type);
 
-// Image Toggle Logic
-let isRealImageShown = false;
+// Image Card Flip
+let isFlipped = false;
 
 function toggleImage() {
-  const img = document.getElementById("profile-img");
-
-  img.classList.add("flip");
-
-  setTimeout(() => {
-    if (isRealImageShown) {
-      img.src = "images/sticker.webp";
-      img.alt = "Click to reveal profile";
-    } else {
-      img.src = "images/profile.jpg";
-      img.alt = "Yabetse Tesfaye";
-    }
-
-    isRealImageShown = !isRealImageShown;
-  }, 150); // Halfway through flip
-
-  setTimeout(() => {
-    img.classList.remove("flip");
-  }, 400); // End of flip
+  const inner = document.getElementById("image-card-inner");
+  if (!inner) return;
+  isFlipped = !isFlipped;
+  inner.style.transform = isFlipped ? "rotateY(180deg)" : "rotateY(0deg)";
 }
 
+// Theme Toggle
 const toggle = document.getElementById('theme-toggle');
-const icon = toggle.querySelector('i');
-const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+if (toggle) {
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const currentTheme = localStorage.getItem('theme') || (prefersDark ? 'dark' : 'light');
 
-const currentTheme = localStorage.getItem('theme') || (prefersDark ? 'dark' : 'light');
-document.body.classList.toggle('light-theme', currentTheme === 'light');
-icon.classList.toggle('fa-sun', currentTheme === 'light');
-icon.classList.toggle('fa-moon', currentTheme === 'dark');
+  if (currentTheme === 'light') {
+    document.body.classList.add('light-theme');
+    toggle.classList.add('light');
+  }
 
-toggle.addEventListener('click', () => {
-  document.body.classList.toggle('light-theme');
-  const isLight = document.body.classList.contains('light-theme');
-  localStorage.setItem('theme', isLight ? 'light' : 'dark');
-  icon.classList.toggle('fa-sun', isLight);
-  icon.classList.toggle('fa-moon', !isLight);
+  toggle.addEventListener('click', () => {
+    document.body.classList.toggle('light-theme');
+    toggle.classList.toggle('light');
+    const isLight = document.body.classList.contains('light-theme');
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+  });
+}
+
+// Scroll-based active nav highlighting
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('nav a');
+
+function updateActiveNav() {
+  const scrollY = window.scrollY + 150;
+
+  sections.forEach(section => {
+    const top = section.offsetTop;
+    const height = section.offsetHeight;
+    const id = section.getAttribute('id');
+
+    if (scrollY >= top && scrollY < top + height) {
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + id) {
+          link.classList.add('active');
+        }
+      });
+    }
+  });
+}
+
+window.addEventListener('scroll', updateActiveNav);
+document.addEventListener('DOMContentLoaded', updateActiveNav);
+
+// Smooth scroll for nav links
+navLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    const href = link.getAttribute('href');
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  });
 });

@@ -9,38 +9,238 @@
 </head>
 
 <body>
-  <!-- CLEAN HEADER -->
   <header>
-    <a href="index.html" class="logo">Yabetse</a>
+    <a href="#home" class="logo">Yabetse</a>
     <nav>
-      <a href="index.html" class="active">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="about.html">About Me</a>
+      <a href="#home" class="active">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#about">About Me</a>
     </nav>
 
-    <!-- Theme Toggle -->
-    <button id="theme-toggle">
-      <i class="fa-solid fa-moon"></i>
-    </button>
+    <div class="theme-switch" id="theme-toggle" aria-label="Toggle Theme">
+      <div class="theme-switch-track">
+        <i class="fa-solid fa-moon theme-icon-moon"></i>
+        <i class="fa-solid fa-sun theme-icon-sun"></i>
+        <div class="theme-switch-thumb"></div>
+      </div>
+    </div>
   </header>
 
-  <section class="home">
+  <!-- HOME -->
+  <section class="home" id="home">
     <div class="home-img">
-      <img id="profile-img" src="images/sticker.webp"
-           alt="Click to reveal profile"
-           onclick="toggleImage()" />
+      <div class="image-card" id="image-card" onclick="toggleImage()">
+        <div class="image-card-inner" id="image-card-inner">
+          <div class="image-card-front">
+            <img src="images/sticker.webp" alt="Click to reveal profile" />
+          </div>
+          <div class="image-card-back">
+            <img src="images/profile.jpg" alt="Yabetse Tesfaye" />
+          </div>
+        </div>
+        <span class="flip-hint">Click me</span>
+      </div>
     </div>
 
     <div class="home-content">
       <h1>Hi, I'm <span>Yabetse Tesfaye</span></h1>
       <h3 class="typing-text">I'm a <span id="typing"></span></h3>
-      <p>As a dedicated 3rd-year Computer Science student at American College of Technology, I’m driven by curiosity and a deep enthusiasm for technology. I enjoy building user-friendly websites and continuously learning new tools and trends in the tech world.</p>
+      <p>As a dedicated 3rd-year Computer Science student at American College of Technology, I'm driven by curiosity and a deep enthusiasm for technology. I enjoy building user-friendly websites and continuously learning new tools and trends in the tech world.</p>
 
       <div class="social-icons">
         <a href="https://www.linkedin.com/in/yabetse-tesfaye-bb4a0b2a1/"><i class="fab fa-linkedin"></i></a>
         <a href="https://github.com/yabtesfu"><i class="fab fa-github"></i></a>
         <a href="https://www.instagram.com/yab_tesfu/"><i class="fab fa-instagram"></i></a>
       </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="projects-section" id="projects">
+    <h1 class="section-title">My <span>Projects</span></h1>
+
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-image">
+          <img src="images/ycube.jpg" alt="YCube Tech Blog">
+        </div>
+        <h3>YCube Tech Blog</h3>
+        <p>A full-featured tech blogging platform built with <strong>PHP</strong>. Implemented user authentication, session management, server-side rendering, and backend logic, applying everything I learned in my web development course.</p>
+        <div class="project-links">
+          <a href="https://github.com/yabtesfu/YCubeNSM-blog-website" target="_blank" class="btn">GitHub</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-badge">Ongoing</div>
+        <div class="project-image">
+          <img src="images/gulit.jpg" alt="Gulit Marketplace">
+        </div>
+        <h3>Gulit Smart Marketplace</h3>
+        <p>A role-based marketplace platform inspired by Ethiopia's traditional "Gulit" (open market). Features <strong>customers, delivery, shop owners, and committee</strong> roles, letting customers browse items and prices online, while shop owners manage their inventory digitally. Turning a manual system into a modern platform.</p>
+        <div class="project-links">
+          <span class="btn btn-ongoing">In Development</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-badge">Live</div>
+        <div class="project-image wedding-placeholder">
+          <i class="fas fa-heart"></i>
+          <i class="fas fa-ring"></i>
+          <i class="fas fa-heart"></i>
+        </div>
+        <h3>Wedding Website</h3>
+        <p>A beautiful wedding invitation and RSVP website built with <strong>Next.js</strong> and <strong>Firebase</strong>. Integrated <strong>Telegram notifications</strong> for real-time alerts. Deployed and actively used by guests for a real wedding celebration.</p>
+        <div class="project-links">
+          <a href="https://desuandtsiwedding.vercel.app/" target="_blank" class="btn">Live Site</a>
+          <a href="https://github.com/yabtesfu/Wedding-Website" target="_blank" class="btn">GitHub</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image">
+          <img src="images/walpay_placeholder.jpg" alt="Walpay Screenshot">
+        </div>
+        <h3>Walpay Microblog</h3>
+        <p>A Flask-based backend blogging site using Bootstrap and Flask-Migrate. Handles basic CRUD operations and blog posts.</p>
+        <div class="project-links">
+          <a href="https://github.com/yabtesfu/Walpay_microblog" target="_blank" class="btn">GitHub</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image">
+          <img src="images/gebeta_placeholder.jpg" alt="Gebeta Game">
+        </div>
+        <h3>Gebeta Game</h3>
+        <p>A traditional Ethiopian mancala game built in Java using JavaFX. Showcases solid OOP principles: encapsulation, inheritance, abstraction, and polymorphism.</p>
+        <div class="project-links">
+          <a href="https://github.com/yabtesfu/Gebeta-Game" target="_blank" class="btn">GitHub</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image">
+          <img src="images/chessline_placeholder.jpg" alt="Chessline Screenshot">
+        </div>
+        <h3>Chessline Web App</h3>
+        <p>A web app for learning chess. I contributed frontend components using Next.js, Tailwind CSS, and worked as an assistant developer on a production team.</p>
+        <div class="project-links">
+          <a href="https://chessline.io" target="_blank" class="btn">Live Demo</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="home about-section" id="about" style="position: relative;">
+
+    <img src="images/aboutsticker.webp" class="sticker sticker-top-left" alt="sticker">
+    <img src="images/about2.webp" class="sticker sticker-contact" alt="sticker">
+    <img src="images/about3.webp" class="sticker sticker-skills" alt="sticker">
+
+    <div class="home-content">
+
+      <img src="images/aboutme.jpg" alt="About Me" class="aboutme-banner" />
+
+      <h1>About <span>Me</span></h1>
+
+      <p>
+        I'm <strong>Yabetse Tesfaye</strong>, a 3rd-year Computer Science student at American College of Technology.
+        Over the past few years, I've been building my journey in tech with both formal education and self-taught learning.
+      </p>
+
+      <p>
+        I have professional experience as a <strong>Data Annotator at Turing</strong>, where I contributed to
+        <strong>training Large Language Models (LLMs)</strong> gaining firsthand insight into how AI systems learn and improve.
+      </p>
+
+      <p>
+        I focus mainly on backend development and have built multiple backend systems using
+        <strong>Flask</strong> and <strong>PHP</strong>, including REST APIs, authentication, session management,
+        server-side logic, and database integrations.
+      </p>
+
+      <p>
+        Currently, I'm working on both <strong>web development</strong> and <strong>mobile app development</strong>
+        to become a <strong>full-stack developer</strong> as well as a <strong>mobile app developer</strong> using
+        <strong>FlutterFlow</strong>. I also build frontends with <strong>HTML, CSS, JavaScript</strong>, and
+        <strong>Next.js</strong>.
+      </p>
+
+      <p>
+        I actively improve my problem-solving abilities by practicing <strong>Data Structures & Algorithms</strong> on
+        <strong>LeetCode</strong>, helping me think more efficiently as a developer.
+      </p>
+
+      <h3>Contact Me</h3>
+
+      <div class="social-icons">
+        <a href="mailto:yabtesfu@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/yabetse-tesfaye-bb4a0b2a1/"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/yabtesfu"><i class="fab fa-github"></i></a>
+        <a href="https://www.instagram.com/yab_tesfu/"><i class="fab fa-instagram"></i></a>
+      </div>
+
+      <h3>Technical Skills</h3>
+
+      <div class="skills-bar">
+
+        <div class="skill">
+          <span>Python</span>
+          <div class="progress"><div class="fill" style="--fill-width: 85%;"></div></div>
+        </div>
+
+        <div class="skill">
+          <span>C++</span>
+          <div class="progress"><div class="fill" style="--fill-width: 60%;"></div></div>
+        </div>
+
+        <div class="skill">
+          <span>Java</span>
+          <div class="progress"><div class="fill" style="--fill-width: 55%;"></div></div>
+        </div>
+
+        <div class="skill">
+          <span>HTML/CSS</span>
+          <div class="progress"><div class="fill" style="--fill-width: 65%;"></div></div>
+        </div>
+
+        <div class="skill">
+          <span>JavaScript</span>
+          <div class="progress"><div class="fill" style="--fill-width: 50%;"></div></div>
+        </div>
+
+        <div class="skill">
+          <span>Flask</span>
+          <div class="progress"><div class="fill" style="--fill-width: 60%;"></div></div>
+        </div>
+
+        <div class="skill">
+          <span>PHP</span>
+          <div class="progress"><div class="fill" style="--fill-width: 55%;"></div></div>
+        </div>
+
+        <div class="skill">
+          <span>Next.js</span>
+          <div class="progress"><div class="fill" style="--fill-width: 50%;"></div></div>
+        </div>
+
+        <div class="skill">
+          <span>Firebase</span>
+          <div class="progress"><div class="fill" style="--fill-width: 45%;"></div></div>
+        </div>
+
+        <div class="skill">
+          <span>FlutterFlow</span>
+          <div class="progress"><div class="fill" style="--fill-width: 40%;"></div></div>
+        </div>
+
+      </div>
+
     </div>
   </section>
 
