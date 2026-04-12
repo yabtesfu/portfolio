@@ -2,7 +2,6 @@
 const words = [
   "Full Stack Developer",
   "Backend Developer",
-  "Mobile App Developer",
   "Web Developer",
   "Tech Enthusiast",
   "Software Developer"
@@ -66,7 +65,30 @@ if (toggle) {
     toggle.classList.toggle('light');
     const isLight = document.body.classList.contains('light-theme');
     localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    updateFlashlight();
   });
+}
+
+// Flashlight effect (dark mode only)
+const flashlight = document.getElementById('flashlight-overlay');
+
+function updateFlashlight() {
+  if (!flashlight) return;
+  const isLight = document.body.classList.contains('light-theme');
+  if (isLight) {
+    flashlight.classList.remove('active');
+  } else {
+    flashlight.classList.add('active');
+  }
+}
+
+if (flashlight) {
+  document.addEventListener('mousemove', (e) => {
+    flashlight.style.setProperty('--mouse-x', e.clientX + 'px');
+    flashlight.style.setProperty('--mouse-y', e.clientY + 'px');
+  });
+
+  updateFlashlight();
 }
 
 // Scroll-based active nav highlighting

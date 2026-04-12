@@ -236,22 +236,6 @@ section {
     0 0 80px rgba(183, 75, 75, 0.25);
 }
 
-.flip-hint {
-  display: block;
-  text-align: center;
-  margin-top: 1rem;
-  font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.4);
-  letter-spacing: 1px;
-  animation: fadeInUp 1s ease 1s forwards;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.image-card:hover .flip-hint {
-  opacity: 0;
-}
-
 @keyframes profileFloat {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
@@ -723,6 +707,33 @@ footer {
 .sticker-contact { bottom: 50%; right: 2%; }
 .sticker-skills { bottom: 14%; left: 2%; }
 
+/* =================== FLASHLIGHT EFFECT (Dark Mode) =================== */
+.flashlight-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  background: radial-gradient(
+    circle 250px at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    transparent 0%,
+    rgba(0, 0, 0, 0.55) 60%,
+    rgba(0, 0, 0, 0.85) 100%
+  );
+}
+
+.flashlight-overlay.active {
+  opacity: 1;
+}
+
+body.light-theme .flashlight-overlay {
+  opacity: 0 !important;
+}
+
 /* =================== LIGHT THEME =================== */
 body.light-theme {
   background-color: #f5f5f5;
@@ -819,10 +830,6 @@ body.light-theme .project-card p {
 
 body.light-theme .wedding-placeholder {
   background: linear-gradient(135deg, #f5eef0, #faf0f0, #f5eef0);
-}
-
-body.light-theme .flip-hint {
-  color: rgba(0, 0, 0, 0.35);
 }
 
 /* =================== RESPONSIVE =================== */
