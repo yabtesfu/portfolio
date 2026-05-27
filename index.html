@@ -3,21 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yabetse Tesfaye | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Yabetse Tesfaye | Developer</title>
+
+  <!-- Unique fonts from Fontshare -->
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&f[]=satoshi@300,400,500,700&display=swap">
+
+  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <header>
-    <a href="#home" class="logo">Yabetse</a>
+
+  <!-- Film grain overlay -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Ambient background orbs -->
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- ===================== HEADER ===================== -->
+  <header id="site-header">
+    <a href="#home" class="logo">YT<span class="logo-dot">.</span></a>
+
     <nav>
       <a href="#home" class="active">Home</a>
       <a href="#projects">Projects</a>
-      <a href="#about">About Me</a>
+      <a href="#typing">Typing</a>
+      <a href="#leetcode">LeetCode</a>
+      <a href="#about">About</a>
     </nav>
 
-    <div class="theme-switch" id="theme-toggle" aria-label="Toggle Theme">
+    <div class="theme-switch" id="theme-toggle" aria-label="Toggle theme">
       <div class="theme-switch-track">
         <i class="fa-solid fa-moon theme-icon-moon"></i>
         <i class="fa-solid fa-sun theme-icon-sun"></i>
@@ -26,226 +48,441 @@
     </div>
   </header>
 
-  <!-- HOME -->
-  <section class="home" id="home">
-    <div class="home-img">
-      <div class="image-card" id="image-card" onclick="toggleImage()">
-        <div class="image-card-inner" id="image-card-inner">
-          <div class="image-card-front">
-            <img src="images/sticker.webp" alt="Click to reveal profile" />
-          </div>
-          <div class="image-card-back">
-            <img src="images/profile.jpg" alt="Yabetse Tesfaye" />
-          </div>
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Open to opportunities
+        </div>
+
+        <h1 class="hero-title">
+          <span class="hero-line hero-line-solid">Yabetse</span>
+          <span class="hero-line hero-line-outline">Tesfaye</span>
+        </h1>
+
+        <p class="hero-role">
+          I'm a <span id="role-typing" class="role-typed"></span>
+        </p>
+
+        <p class="hero-bio">
+          3rd-year CS student at American College of Technology. I build scalable
+          backends, ship clean frontends, and train LLMs as a Data Annotator at Turing.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary">
+            View my work <i class="fas fa-arrow-right"></i>
+          </a>
+          <a href="Resume/Yabetse%20Tesfaye%20-%20Resume.pdf" download="Yabetse_Tesfaye_Resume.pdf" class="btn-resume">
+            <i class="fas fa-download"></i> Resume
+          </a>
+          <a href="mailto:yabtesfu@gmail.com" class="btn-secondary">Contact</a>
+        </div>
+
+        <div class="social-row">
+          <a href="https://github.com/yabtesfu" class="social-pill" target="_blank" rel="noopener" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/yabetse-tesfaye-bb4a0b2a1/" class="social-pill" target="_blank" rel="noopener" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://leetcode.com/u/yabtesfu/" class="social-pill" target="_blank" rel="noopener" title="LeetCode">
+            <i class="fas fa-code"></i>
+          </a>
+          <a href="https://monkeytype.com/profile/Yabetse" class="social-pill" target="_blank" rel="noopener" title="MonkeyType">
+            <i class="fas fa-keyboard"></i>
+          </a>
+          <a href="https://www.instagram.com/yab_tesfu/" class="social-pill" target="_blank" rel="noopener" title="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
         </div>
       </div>
-    </div>
 
-    <div class="home-content">
-      <h1>Hi, I'm <span>Yabetse Tesfaye</span></h1>
-      <h3 class="typing-text">I'm a <span id="typing"></span></h3>
-      <p>As a dedicated 3rd-year Computer Science student at American College of Technology, I'm driven by curiosity and a deep enthusiasm for technology. I enjoy building user-friendly websites and continuously learning new tools and trends in the tech world.</p>
-
-      <div class="social-icons">
-        <a href="https://www.linkedin.com/in/yabetse-tesfaye-bb4a0b2a1/"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/yabtesfu"><i class="fab fa-github"></i></a>
-        <a href="https://www.instagram.com/yab_tesfu/"><i class="fab fa-instagram"></i></a>
+      <div class="hero-visual">
+        <div class="profile-wrap" id="image-card" onclick="toggleImage()">
+          <div class="profile-inner" id="image-card-inner">
+            <div class="profile-face profile-front">
+              <img src="images/sticker.webp" alt="Click to reveal Yabetse" />
+            </div>
+            <div class="profile-face profile-back">
+              <img src="images/profile.jpg" alt="Yabetse Tesfaye" />
+            </div>
+          </div>
+          <div class="profile-ring r1"></div>
+          <div class="profile-ring r2"></div>
+          <span class="flip-hint"><i class="fas fa-hand-pointer"></i> click me</span>
+        </div>
       </div>
+
     </div>
   </section>
 
-  <!-- PROJECTS -->
-  <section class="projects-section" id="projects">
-    <h1 class="section-title">My <span>Projects</span></h1>
+  <!-- ===================== MARQUEE ===================== -->
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Python</span><em>·</em>
+      <span>Flask</span><em>·</em>
+      <span>PHP</span><em>·</em>
+      <span>Next.js</span><em>·</em>
+      <span>JavaScript</span><em>·</em>
+      <span>Firebase</span><em>·</em>
+      <span>C++</span><em>·</em>
+      <span>Java</span><em>·</em>
+      <span>FlutterFlow</span><em>·</em>
+      <span>HTML / CSS</span><em>·</em>
+      <span>DSA</span><em>·</em>
+      <span>138 WPM</span><em>·</em>
+      <span>REST APIs</span><em>·</em>
+      <span>Python</span><em>·</em>
+      <span>Flask</span><em>·</em>
+      <span>PHP</span><em>·</em>
+      <span>Next.js</span><em>·</em>
+      <span>JavaScript</span><em>·</em>
+      <span>Firebase</span><em>·</em>
+      <span>C++</span><em>·</em>
+      <span>Java</span><em>·</em>
+      <span>FlutterFlow</span><em>·</em>
+      <span>HTML / CSS</span><em>·</em>
+      <span>DSA</span><em>·</em>
+      <span>138 WPM</span><em>·</em>
+      <span>REST APIs</span><em>·</em>
+    </div>
+  </div>
+
+  <!-- ===================== PROJECTS ===================== -->
+  <section class="pg-section" id="projects">
+    <div class="section-head reveal">
+      <p class="section-label">01 / PROJECTS</p>
+      <h2 class="section-title">Things I've <span>Built</span></h2>
+    </div>
 
     <div class="projects-grid">
 
-      <div class="project-card">
+      <div class="project-card reveal" data-delay="0">
+        <span class="proj-num">01</span>
         <div class="project-image">
-          <img src="images/ycube.jpg" alt="YCube Tech Blog">
+          <img src="images/ycube.jpg" alt="YCube Tech Blog" />
         </div>
         <h3>YCube Tech Blog</h3>
-        <p>A full-featured tech blogging platform built with <strong>PHP</strong>. Implemented user authentication, session management, server-side rendering, and backend logic, applying everything I learned in my web development course.</p>
+        <p>Full-featured tech blogging platform built with <strong>PHP</strong>. Covers user authentication, session management, server-side rendering and backend logic.</p>
         <div class="project-links">
-          <a href="https://github.com/yabtesfu/YCubeNSM-blog-website" target="_blank" class="btn">GitHub</a>
+          <a href="https://github.com/yabtesfu/YCubeNSM-blog-website" target="_blank" class="proj-btn">
+            <i class="fab fa-github"></i> GitHub
+          </a>
         </div>
       </div>
 
-      <div class="project-card">
+      <div class="project-card reveal" data-delay="100">
+        <span class="proj-num">02</span>
         <div class="project-badge">Ongoing</div>
         <div class="project-image">
-          <img src="images/gulit.jpg" alt="Gulit Marketplace">
+          <img src="images/gulit.jpg" alt="Gulit Marketplace" />
         </div>
         <h3>Gulit Smart Marketplace</h3>
-        <p>A role-based marketplace platform inspired by Ethiopia's traditional "Gulit" (open market). Features <strong>customers, delivery, shop owners, and committee</strong> roles, letting customers browse items and prices online, while shop owners manage their inventory digitally. Turning a manual system into a modern platform.</p>
+        <p>Role-based marketplace inspired by Ethiopia's traditional "Gulit" market. Serves <strong>customers, delivery, shop owners and committees</strong>, digitising a manual system.</p>
         <div class="project-links">
-          <span class="btn btn-ongoing">In Development</span>
+          <span class="proj-btn proj-btn-ghost">In Development</span>
         </div>
       </div>
 
-      <div class="project-card">
-        <div class="project-badge">Live</div>
+      <div class="project-card reveal" data-delay="200">
+        <span class="proj-num">03</span>
+        <div class="project-badge project-badge-live">Live</div>
         <div class="project-image wedding-placeholder">
           <i class="fas fa-heart"></i>
           <i class="fas fa-ring"></i>
           <i class="fas fa-heart"></i>
         </div>
         <h3>Wedding Website</h3>
-        <p>A beautiful wedding invitation and RSVP website built with <strong>Next.js</strong> and <strong>Firebase</strong>. Integrated <strong>Telegram notifications</strong> for real-time alerts. Deployed and actively used by guests for a real wedding celebration.</p>
+        <p>Wedding invitation & RSVP site built with <strong>Next.js</strong> and <strong>Firebase</strong>. Real-time <strong>Telegram notifications</strong>. Actively used by guests at a real wedding.</p>
         <div class="project-links">
-          <a href="https://desuandtsiwedding.vercel.app/" target="_blank" class="btn">Live Site</a>
-          <a href="https://github.com/yabtesfu/Wedding-Website" target="_blank" class="btn">GitHub</a>
+          <a href="https://desuandtsiwedding.vercel.app/" target="_blank" class="proj-btn"><i class="fas fa-external-link-alt"></i> Live Site</a>
+          <a href="https://github.com/yabtesfu/Wedding-Website" target="_blank" class="proj-btn"><i class="fab fa-github"></i> GitHub</a>
         </div>
       </div>
 
-      <div class="project-card">
+      <div class="project-card reveal" data-delay="0">
+        <span class="proj-num">04</span>
         <div class="project-image">
-          <img src="images/walpay_placeholder.jpg" alt="Walpay Screenshot">
+          <img src="images/walpay_placeholder.jpg" alt="Walpay" />
         </div>
         <h3>Walpay Microblog</h3>
-        <p>A Flask-based backend blogging site using Bootstrap and Flask-Migrate. Handles basic CRUD operations and blog posts.</p>
+        <p>Flask-based blogging backend with Bootstrap and Flask-Migrate. Full CRUD, database migrations and blog post management.</p>
         <div class="project-links">
-          <a href="https://github.com/yabtesfu/Walpay_microblog" target="_blank" class="btn">GitHub</a>
+          <a href="https://github.com/yabtesfu/Walpay_microblog" target="_blank" class="proj-btn"><i class="fab fa-github"></i> GitHub</a>
         </div>
       </div>
 
-      <div class="project-card">
+      <div class="project-card reveal" data-delay="100">
+        <span class="proj-num">05</span>
         <div class="project-image">
-          <img src="images/gebeta_placeholder.jpg" alt="Gebeta Game">
+          <img src="images/gebeta_placeholder.jpg" alt="Gebeta Game" />
         </div>
         <h3>Gebeta Game</h3>
-        <p>A traditional Ethiopian mancala game built in Java using JavaFX. Showcases solid OOP principles: encapsulation, inheritance, abstraction, and polymorphism.</p>
+        <p>Traditional Ethiopian mancala game in <strong>Java + JavaFX</strong>. Showcases encapsulation, inheritance, abstraction and polymorphism.</p>
         <div class="project-links">
-          <a href="https://github.com/yabtesfu/Gebeta-Game" target="_blank" class="btn">GitHub</a>
+          <a href="https://github.com/yabtesfu/Gebeta-Game" target="_blank" class="proj-btn"><i class="fab fa-github"></i> GitHub</a>
         </div>
       </div>
 
-      <div class="project-card">
+      <div class="project-card reveal" data-delay="200">
+        <span class="proj-num">06</span>
         <div class="project-image">
-          <img src="images/chessline_placeholder.jpg" alt="Chessline Screenshot">
+          <img src="images/chessline_placeholder.jpg" alt="Chessline" />
         </div>
         <h3>Chessline Web App</h3>
-        <p>A web app for learning chess. I contributed frontend components using Next.js, Tailwind CSS, and worked as an assistant developer on a production team.</p>
+        <p>Chess learning platform. Contributed frontend components using <strong>Next.js</strong> and <strong>Tailwind CSS</strong> as assistant developer on a production team.</p>
         <div class="project-links">
-          <a href="https://chessline.io" target="_blank" class="btn">Live Demo</a>
+          <a href="https://chessline.io" target="_blank" class="proj-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section class="home about-section" id="about" style="position: relative;">
-
-    <img src="images/aboutsticker.webp" class="sticker sticker-top-left" alt="sticker">
-    <img src="images/about2.webp" class="sticker sticker-contact" alt="sticker">
-    <img src="images/about3.webp" class="sticker sticker-skills" alt="sticker">
-
-    <div class="home-content">
-
-      <h1>About <span>Me</span></h1>
-
-      <p>
-        I'm <strong>Yabetse Tesfaye</strong>, a 3rd-year Computer Science student at American College of Technology.
-        Over the past few years, I've been building my journey in tech with both formal education and self-taught learning.
-      </p>
-
-      <p>
-        I have professional experience as a <strong>Data Annotator at Turing</strong>, where I contributed to
-        <strong>training Large Language Models (LLMs)</strong> gaining firsthand insight into how AI systems learn and improve.
-      </p>
-
-      <p>
-        I focus mainly on backend development and have built multiple backend systems using
-        <strong>Flask</strong> and <strong>PHP</strong>, including REST APIs, authentication, session management,
-        server-side logic, and database integrations.
-      </p>
-
-      <p>
-        Currently, I'm working on both <strong>web development</strong> and <strong>mobile app development</strong>
-        to become a <strong>full-stack developer</strong> as well as a <strong>mobile app developer</strong> using
-        <strong>FlutterFlow</strong>. I also build frontends with <strong>HTML, CSS, JavaScript</strong>, and
-        <strong>Next.js</strong>.
-      </p>
-
-      <p>
-        I actively improve my problem-solving abilities by practicing <strong>Data Structures & Algorithms</strong> on
-        <strong>LeetCode</strong>, helping me think more efficiently as a developer.
-      </p>
-
-      <h3>Contact Me</h3>
-
-      <div class="social-icons">
-        <a href="mailto:yabtesfu@gmail.com"><i class="fas fa-envelope"></i></a>
-        <a href="https://www.linkedin.com/in/yabetse-tesfaye-bb4a0b2a1/"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/yabtesfu"><i class="fab fa-github"></i></a>
-        <a href="https://www.instagram.com/yab_tesfu/"><i class="fab fa-instagram"></i></a>
+  <div class="metrics-row">
+    <!-- ===================== MONKEYTYPE TYPING ===================== -->
+    <section class="pg-section typing-section" id="typing">
+      <div class="section-head reveal">
+        <p class="section-label">02 / TYPING SPEED</p>
+        <h2 class="section-title">Typing at the <span>Speed</span> of Thought</h2>
+        <p class="section-sub">Tracked on MonkeyType, consistently hitting 130+ WPM.</p>
       </div>
 
-      <h3>Technical Skills</h3>
+    <div class="typing-layout">
 
-      <div class="skills-bar">
+      <!-- Top WPM hero stat -->
+      <div class="wpm-hero reveal">
+        <div class="wpm-hero-num count-up" data-target="138">0</div>
+        <div class="wpm-hero-meta">
+          <span class="wpm-hero-label">WPM Best</span>
+          <span class="wpm-hero-mode">10 words · 100% accuracy</span>
+        </div>
+        <div class="wpm-hero-badge">Personal Record</div>
+      </div>
 
-        <div class="skill">
-          <span>Python</span>
-          <div class="progress"><div class="fill" style="--fill-width: 85%;"></div></div>
+      <!-- WPM cards grid -->
+      <div class="wpm-grid reveal" data-delay="100">
+        <div class="wpm-card">
+          <span class="wpm-n count-up" data-target="130">0</span>
+          <span class="wpm-u">WPM</span>
+          <span class="wpm-m">15 seconds</span>
+          <span class="wpm-a acc-green">100% acc</span>
+        </div>
+        <div class="wpm-card">
+          <span class="wpm-n count-up" data-target="121">0</span>
+          <span class="wpm-u">WPM</span>
+          <span class="wpm-m">25 words</span>
+          <span class="wpm-a acc-green">95% acc</span>
+        </div>
+        <div class="wpm-card">
+          <span class="wpm-n count-up" data-target="120">0</span>
+          <span class="wpm-u">WPM</span>
+          <span class="wpm-m">30 seconds</span>
+          <span class="wpm-a acc-green">95% acc</span>
+        </div>
+        <div class="wpm-card">
+          <span class="wpm-n count-up" data-target="90">0</span>
+          <span class="wpm-u">WPM</span>
+          <span class="wpm-m">60 seconds</span>
+          <span class="wpm-a acc-yellow">95% acc</span>
+        </div>
+      </div>
+
+      <!-- Stats strip -->
+      <div class="typing-stats reveal" data-delay="150">
+        <div class="typ-chip">
+          <i class="fas fa-bolt"></i>
+          <div>
+            <span class="typ-val count-up" data-target="31089">0</span>
+            <span class="typ-key">Tests Started</span>
+          </div>
+        </div>
+        <div class="typ-chip">
+          <i class="fas fa-check"></i>
+          <div>
+            <span class="typ-val count-up" data-target="1161">0</span>
+            <span class="typ-key">Tests Completed</span>
+          </div>
+        </div>
+        <div class="typ-chip">
+          <i class="fas fa-clock"></i>
+          <div>
+            <span class="typ-val count-up" data-target="32" data-suffix="h+">0h+</span>
+            <span class="typ-key">Time Typing</span>
+          </div>
+        </div>
+        <div class="typ-chip">
+          <i class="fas fa-medal"></i>
+          <div>
+            <span class="typ-val count-up" data-target="17" data-prefix="Top " data-suffix="%">Top 0%</span>
+            <span class="typ-key">Global (15s mode)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Profile link -->
+      <div class="typing-footer reveal" data-delay="200">
+        <a href="https://monkeytype.com/profile/Yabetse" target="_blank" rel="noopener" class="monkey-btn">
+          <i class="fas fa-keyboard"></i>
+          View MonkeyType Profile
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+
+    </div>
+    </section>
+
+    <!-- ===================== LEETCODE ===================== -->
+    <section class="pg-section leetcode-section" id="leetcode">
+      <div class="section-head reveal">
+        <p class="section-label">03 / LEETCODE</p>
+        <h2 class="section-title">Problem <span>Solving</span></h2>
+        <p class="section-sub">Sharpening algorithmic thinking, one problem at a time.</p>
+      </div>
+
+      <div class="leet-grid">
+
+        <div class="leet-donut-card reveal">
+          <div class="donut-wrap">
+            <canvas id="leetDonut"></canvas>
+            <div class="donut-center">
+              <span class="donut-big" id="donut-total">...</span>
+              <span class="donut-sub">Solved</span>
+            </div>
+          </div>
         </div>
 
-        <div class="skill">
-          <span>C++</span>
-          <div class="progress"><div class="fill" style="--fill-width: 60%;"></div></div>
+        <div class="leet-bars reveal" data-delay="100">
+          <div class="diff-row easy">
+            <div class="diff-meta">
+              <span class="diff-name">Easy</span>
+              <span class="diff-count" id="leet-easy">...</span>
+            </div>
+            <div class="diff-track"><div class="diff-fill" id="leet-easy-bar"></div></div>
+          </div>
+          <div class="diff-row medium">
+            <div class="diff-meta">
+              <span class="diff-name">Medium</span>
+              <span class="diff-count" id="leet-medium">...</span>
+            </div>
+            <div class="diff-track"><div class="diff-fill" id="leet-medium-bar"></div></div>
+          </div>
+          <div class="diff-row hard">
+            <div class="diff-meta">
+              <span class="diff-name">Hard</span>
+              <span class="diff-count" id="leet-hard">...</span>
+            </div>
+            <div class="diff-track"><div class="diff-fill" id="leet-hard-bar"></div></div>
+          </div>
         </div>
 
-        <div class="skill">
-          <span>Java</span>
-          <div class="progress"><div class="fill" style="--fill-width: 55%;"></div></div>
+        <div class="leet-extras reveal" data-delay="200">
+          <div class="leet-stat-chip">
+            <i class="fas fa-trophy"></i>
+            <div>
+              <span class="chip-val" id="leet-rank">...</span>
+              <span class="chip-label">Global Rank</span>
+            </div>
+          </div>
+          <div class="leet-stat-chip">
+            <i class="fas fa-check-double"></i>
+            <div>
+              <span class="chip-val" id="leet-acceptance">...</span>
+              <span class="chip-label">Acceptance Rate</span>
+            </div>
+          </div>
+          <a href="https://leetcode.com/u/yabtesfu/" target="_blank" rel="noopener" class="leet-profile-btn">
+            <img src="https://leetcode.com/favicon.ico" alt="" class="leet-fav" />
+            View Full Profile
+            <i class="fas fa-arrow-right"></i>
+          </a>
         </div>
 
-        <div class="skill">
-          <span>HTML/CSS</span>
-          <div class="progress"><div class="fill" style="--fill-width: 65%;"></div></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section class="pg-section about-section" id="about">
+    <div class="section-head reveal">
+      <p class="section-label">04 / ABOUT</p>
+      <h2 class="section-title">Who Am <span>I</span></h2>
+    </div>
+
+    <div class="about-grid">
+
+      <div class="about-text reveal">
+        <p>I'm <strong>Yabetse Tesfaye</strong>, a 3rd-year Computer Science student at American College of Technology. I'm driven by curiosity and love building things that actually work in the real world.</p>
+        <p>I have professional experience as a <strong>Data Annotator at Turing</strong>, contributing to training Large Language Models, giving me firsthand insight into how AI systems learn.</p>
+        <p>My main focus is <strong>backend development</strong> using Flask and PHP: REST APIs, authentication, session management and database integration. Currently pushing into full-stack and mobile with FlutterFlow.</p>
+
+        <div class="about-contact">
+          <h3>Get in touch</h3>
+          <a href="mailto:yabtesfu@gmail.com" class="contact-line">
+            <i class="fas fa-envelope"></i> yabtesfu@gmail.com
+          </a>
+          <a href="https://www.linkedin.com/in/yabetse-tesfaye-bb4a0b2a1/" target="_blank" class="contact-line">
+            <i class="fab fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="https://github.com/yabtesfu" target="_blank" class="contact-line">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          <a href="Resume/Yabetse%20Tesfaye%20-%20Resume.pdf" download="Yabetse_Tesfaye_Resume.pdf" class="contact-line">
+            <i class="fas fa-file-pdf"></i> Download Resume
+          </a>
+        </div>
+      </div>
+
+      <div class="about-right reveal" data-delay="150">
+        <h3>Tech Stack</h3>
+        <div class="tags">
+          <span class="tag tag-hot">Python</span>
+          <span class="tag tag-hot">Flask</span>
+          <span class="tag tag-hot">PHP</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Next.js</span>
+          <span class="tag">HTML/CSS</span>
+          <span class="tag">C++</span>
+          <span class="tag">Java</span>
+          <span class="tag">Firebase</span>
+          <span class="tag">FlutterFlow</span>
+          <span class="tag">SQL</span>
+          <span class="tag">REST APIs</span>
+          <span class="tag tag-hot">DSA</span>
+          <span class="tag">Git</span>
         </div>
 
-        <div class="skill">
-          <span>JavaScript</span>
-          <div class="progress"><div class="fill" style="--fill-width: 50%;"></div></div>
+        <div class="fun-stats">
+          <div class="fstat">
+            <span class="fstat-n">6+</span>
+            <span class="fstat-l">Projects</span>
+          </div>
+          <div class="fstat">
+            <span class="fstat-n">3rd</span>
+            <span class="fstat-l">Year CS</span>
+          </div>
+          <div class="fstat">
+            <span class="fstat-n">138</span>
+            <span class="fstat-l">WPM Best</span>
+          </div>
         </div>
-
-        <div class="skill">
-          <span>Flask</span>
-          <div class="progress"><div class="fill" style="--fill-width: 60%;"></div></div>
-        </div>
-
-        <div class="skill">
-          <span>PHP</span>
-          <div class="progress"><div class="fill" style="--fill-width: 55%;"></div></div>
-        </div>
-
-        <div class="skill">
-          <span>Next.js</span>
-          <div class="progress"><div class="fill" style="--fill-width: 50%;"></div></div>
-        </div>
-
-        <div class="skill">
-          <span>Firebase</span>
-          <div class="progress"><div class="fill" style="--fill-width: 45%;"></div></div>
-        </div>
-
-        <div class="skill">
-          <span>FlutterFlow</span>
-          <div class="progress"><div class="fill" style="--fill-width: 40%;"></div></div>
-        </div>
-
       </div>
 
     </div>
   </section>
 
+  <!-- ===================== FOOTER ===================== -->
   <footer>
-    <p>&copy; 2025 Yabetse Tesfaye. All rights reserved.</p>
+    <div class="footer-inner">
+      <p class="foot-name">Yabetse Tesfaye</p>
+      <p class="foot-copy">Designed & coded with passion, 2025</p>
+    </div>
   </footer>
 
-  <div class="flashlight-overlay" id="flashlight-overlay"></div>
   <script src="script.js"></script>
 </body>
 </html>
