@@ -3,14 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yabetse Tesfaye | Developer</title>
+  <title>Yabetse Tesfaye | AI Systems & Infrastructure Engineer</title>
 
-  <!-- Unique fonts from Fontshare -->
-  <link rel="preconnect" href="https://api.fontshare.com">
-  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&f[]=satoshi@300,400,500,700&display=swap">
+  <!-- Fonts: Arvo (site) + Dancing Script (signature logo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
 
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <!-- Colored tech logos -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -29,14 +32,16 @@
 
   <!-- ===================== HEADER ===================== -->
   <header id="site-header">
-    <a href="#home" class="logo">YT<span class="logo-dot">.</span></a>
+    <a href="#home" class="logo" id="logo-sig" aria-label="Yabetse T — home">
+      <span class="sig">Yabetse<span class="sig-dot">.</span>T</span>
+    </a>
 
     <nav>
       <a href="#home" class="active">Home</a>
       <a href="#projects">Projects</a>
-      <a href="#typing">Typing</a>
-      <a href="#leetcode">LeetCode</a>
       <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
     </nav>
 
     <div class="theme-switch" id="theme-toggle" aria-label="Toggle theme">
@@ -48,109 +53,73 @@
     </div>
   </header>
 
-  <!-- ===================== HERO ===================== -->
+  <!-- ===================== HERO (centered) ===================== -->
   <section class="hero" id="home">
     <div class="hero-inner">
 
-      <div class="hero-content">
-        <div class="hero-badge">
-          <span class="badge-dot"></span>
-          Open to opportunities
-        </div>
-
-        <h1 class="hero-title">
-          <span class="hero-line hero-line-solid">Yabetse</span>
-          <span class="hero-line hero-line-outline">Tesfaye</span>
-        </h1>
-
-        <p class="hero-role">
-          I'm a <span id="role-typing" class="role-typed"></span>
-        </p>
-
-        <p class="hero-bio">
-          3rd-year CS student at American College of Technology. I build scalable
-          backends, ship clean frontends, and train LLMs as a Data Annotator at Turing.
-        </p>
-
-        <div class="hero-actions">
-          <a href="#projects" class="btn-primary">
-            View my work <i class="fas fa-arrow-right"></i>
-          </a>
-          <a href="Resume/Yabetse%20Tesfaye%20-%20Resume.pdf" download="Yabetse_Tesfaye_Resume.pdf" class="btn-resume">
-            <i class="fas fa-download"></i> Resume
-          </a>
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=yabtesfu@gmail.com" target="_blank" rel="noopener" class="btn-secondary">Contact</a>
-        </div>
-
-        <div class="social-row">
-          <a href="https://github.com/yabtesfu" class="social-pill" target="_blank" rel="noopener" title="GitHub">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/yabetse-tesfaye-bb4a0b2a1/" class="social-pill" target="_blank" rel="noopener" title="LinkedIn">
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a href="https://leetcode.com/u/yabtesfu/" class="social-pill" target="_blank" rel="noopener" title="LeetCode">
-            <i class="fas fa-code"></i>
-          </a>
-          <a href="https://monkeytype.com/profile/Yabetse" class="social-pill" target="_blank" rel="noopener" title="MonkeyType">
-            <i class="fas fa-keyboard"></i>
-          </a>
-          <a href="https://www.instagram.com/yab_tesfu/" class="social-pill" target="_blank" rel="noopener" title="Instagram">
-            <i class="fab fa-instagram"></i>
-          </a>
-        </div>
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Open to opportunities
       </div>
 
-      <div class="hero-visual">
-        <div class="profile-wrap" id="image-card" onclick="toggleImage()">
-          <div class="profile-inner" id="image-card-inner">
-            <div class="profile-face profile-front">
-              <img src="images/sticker.webp" alt="Click to reveal Yabetse" />
-            </div>
-            <div class="profile-face profile-back">
-              <img src="images/profile.jpg" alt="Yabetse Tesfaye" />
-            </div>
-          </div>
-          <div class="profile-ring r1"></div>
-          <div class="profile-ring r2"></div>
-          <span class="flip-hint"><i class="fas fa-hand-pointer"></i> click me</span>
-        </div>
+      <h1 class="hero-title">
+        Yabetse <span>Tesfaye</span>
+      </h1>
+
+      <p class="hero-role">
+        <span id="role-typing" class="role-typed"></span>
+      </p>
+
+      <p class="hero-quote">
+        "I build intelligent software at the intersection of AI, infrastructure, and
+        product, turning complex ideas into reliable systems designed to evolve and
+        make an impact."
+      </p>
+
+      <div class="hero-actions">
+        <a href="#projects" class="btn-primary">
+          View Projects <i class="fas fa-arrow-right"></i>
+        </a>
+        <a href="Resume/Yabetse%20Tesfaye%20-%20Resume.pdf" download="Yabetse_Tesfaye_Resume.pdf" class="btn-secondary">
+          <i class="fas fa-download"></i> Download Resume
+        </a>
+        <a href="https://github.com/yabtesfu" target="_blank" rel="noopener" class="btn-secondary">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+        <a href="https://leetcode.com/u/yabtesfu/" target="_blank" rel="noopener" class="btn-secondary">
+          <i class="fas fa-code"></i> LeetCode
+        </a>
+      </div>
+
+      <div class="social-row">
+        <a href="https://github.com/yabtesfu" class="social-pill" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/yabetse-tesfaye-bb4a0b2a1/" class="social-pill" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://leetcode.com/u/yabtesfu/" class="social-pill" target="_blank" rel="noopener" title="LeetCode"><i class="fas fa-code"></i></a>
+        <a href="https://monkeytype.com/profile/Yabetse" class="social-pill" target="_blank" rel="noopener" title="MonkeyType"><i class="fas fa-keyboard"></i></a>
+        <a href="https://www.instagram.com/yab_tesfu/" class="social-pill" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+
+      <!-- Tech logo strip -->
+      <div class="tech-strip" aria-label="Tech stack">
+        <i class="devicon-python-plain colored" title="Python"></i>
+        <i class="devicon-typescript-plain colored" title="TypeScript"></i>
+        <i class="devicon-javascript-plain colored" title="JavaScript"></i>
+        <i class="devicon-react-original colored" title="React"></i>
+        <i class="devicon-nodejs-plain colored" title="Node.js"></i>
+        <i class="devicon-nextjs-plain" title="Next.js"></i>
+        <i class="devicon-fastapi-plain colored" title="FastAPI"></i>
+        <i class="devicon-flask-plain" title="Flask"></i>
+        <i class="devicon-postgresql-plain colored" title="PostgreSQL"></i>
+        <i class="devicon-docker-plain colored" title="Docker"></i>
+        <i class="devicon-tensorflow-original colored" title="TensorFlow"></i>
+        <i class="devicon-git-plain colored" title="Git"></i>
+        <i class="devicon-linux-plain" title="Linux"></i>
       </div>
 
     </div>
+
+    <a href="#projects" class="scroll-cue" aria-hidden="true"><i class="fas fa-chevron-down"></i></a>
   </section>
-
-  <!-- ===================== MARQUEE ===================== -->
-  <div class="marquee-strip" aria-hidden="true">
-    <div class="marquee-track">
-      <span>Python</span><em>·</em>
-      <span>Flask</span><em>·</em>
-      <span>PHP</span><em>·</em>
-      <span>Next.js</span><em>·</em>
-      <span>JavaScript</span><em>·</em>
-      <span>Firebase</span><em>·</em>
-      <span>C++</span><em>·</em>
-      <span>Java</span><em>·</em>
-      <span>FlutterFlow</span><em>·</em>
-      <span>HTML / CSS</span><em>·</em>
-      <span>DSA</span><em>·</em>
-      <span>138 WPM</span><em>·</em>
-      <span>REST APIs</span><em>·</em>
-      <span>Python</span><em>·</em>
-      <span>Flask</span><em>·</em>
-      <span>PHP</span><em>·</em>
-      <span>Next.js</span><em>·</em>
-      <span>JavaScript</span><em>·</em>
-      <span>Firebase</span><em>·</em>
-      <span>C++</span><em>·</em>
-      <span>Java</span><em>·</em>
-      <span>FlutterFlow</span><em>·</em>
-      <span>HTML / CSS</span><em>·</em>
-      <span>DSA</span><em>·</em>
-      <span>138 WPM</span><em>·</em>
-      <span>REST APIs</span><em>·</em>
-    </div>
-  </div>
 
   <!-- ===================== PROJECTS ===================== -->
   <section class="pg-section" id="projects">
@@ -161,191 +130,282 @@
 
     <div class="projects-grid">
 
+      <!-- imuStore DB -->
       <div class="project-card reveal" data-delay="0">
         <span class="proj-num">01</span>
         <div class="project-image">
-          <img src="images/ycube.jpg" alt="YCube Tech Blog" />
+          <img src="images/imustore-card.png" alt="imuStore DB — append-only database engine" />
         </div>
-        <h3>YCube Tech Blog</h3>
-        <p>Full-featured tech blogging platform built with <strong>PHP</strong>. Covers user authentication, session management, server-side rendering and backend logic.</p>
+        <h3>imuStore DB</h3>
+        <p>Database engine written in pure <strong>Python</strong> with <strong>zero dependencies</strong>.
+          Every update creates a new immutable tree path; a commit is one <strong>atomic root swap</strong>, so
+          readers never see a half-written state. Includes <strong>append-only storage</strong>, file locking,
+          <strong>compaction</strong>, <strong>integrity audits</strong> and a full <strong>CLI</strong>.</p>
         <div class="project-links">
-          <a href="https://github.com/yabtesfu/YCubeNSM-blog-website" target="_blank" class="proj-btn">
+          <a href="https://github.com/yabtesfu/imustore-db-" target="_blank" rel="noopener" class="proj-btn">
             <i class="fab fa-github"></i> GitHub
           </a>
         </div>
       </div>
 
+      <!-- GAN Observatory -->
       <div class="project-card reveal" data-delay="100">
         <span class="proj-num">02</span>
-        <div class="project-badge">Ongoing</div>
         <div class="project-image">
-          <img src="images/gulit.jpg" alt="Gulit Marketplace" />
+          <img src="images/gan lab tensorflow.jpg" alt="GAN Observatory — real-time GAN training studio" />
         </div>
-        <h3>Gulit Smart Marketplace</h3>
-        <p>Role-based marketplace inspired by Ethiopia's traditional "Gulit" market. Serves <strong>customers, delivery, shop owners and committees</strong>, digitising a manual system.</p>
+        <h3>GAN Observatory</h3>
+        <p><strong>GAN Observatory</strong> is a real-time, in-browser studio for training and analyzing
+          <strong>Generative Adversarial Networks</strong>. You watch a neural net learn a distribution live,
+          <strong>steer training mid-run</strong> (learning rate, loss, stabilizers) while a mode-collapse alarm
+          watches, <strong>save and serve models over a REST API</strong>, and race two GANs side by side in an
+          <strong>A/B derby</strong> with a time-travel scrubber. Built with <strong>Python, FastAPI, WebSockets
+          and NumPy</strong>, containerized with Docker and backed by 42 tests and CI.</p>
         <div class="project-links">
-          <span class="proj-btn proj-btn-ghost">In Development</span>
+          <a href="https://github.com/yabtesfu/gan-lab-tensorflow" target="_blank" rel="noopener" class="proj-btn">
+            <i class="fab fa-github"></i> GitHub
+          </a>
         </div>
       </div>
 
+      <!-- Kuas Meda -->
       <div class="project-card reveal" data-delay="200">
-        <span class="proj-num">03</span>
         <div class="project-badge project-badge-live">Live</div>
+        <span class="proj-num">03</span>
+        <div class="project-image has-logo">
+          <img src="images/Kuas Meda image.jpg" alt="Kuas Meda — football field booking dashboard" />
+          <span class="proj-logo"><img src="images/kuasmeda-logo.png" alt="Kuas Meda logo" /></span>
+        </div>
+        <h3>Kuas Meda</h3>
+        <p><strong>Kuas Meda</strong> is a full-stack <strong>football field booking</strong> and
+          <strong>player-matching</strong> platform designed for <strong>Addis Ababa</strong>. It solves manual
+          field reservations, unclear waiting lines, and the struggle to find enough players for a match. Players
+          browse available fields, view open groups, apply to join matches, and manage upcoming sessions. Group
+          organizers create sessions, accept or reject applicants, and manage team capacity. Field operators get a
+          dashboard to add fields, create time slots, and manage daily schedules — with admin views,
+          <strong>role-based access</strong>, and a foundation for payments, player ratings and smart matching.</p>
+        <div class="project-links">
+          <a href="https://kuas-meda.vercel.app/" target="_blank" rel="noopener" class="proj-btn"><i class="fas fa-external-link-alt"></i> Live Site</a>
+          <a href="https://github.com/yabtesfu/kuas-meda" target="_blank" rel="noopener" class="proj-btn"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+      </div>
+
+      <!-- Wedding Website -->
+      <div class="project-card reveal" data-delay="0">
+        <div class="project-badge project-badge-live">Live</div>
+        <span class="proj-num">04</span>
         <div class="project-image wedding-placeholder">
           <i class="fas fa-heart"></i>
           <i class="fas fa-ring"></i>
           <i class="fas fa-heart"></i>
         </div>
         <h3>Wedding Website</h3>
-        <p>Wedding invitation & RSVP site built with <strong>Next.js</strong> and <strong>Firebase</strong>. Real-time <strong>Telegram notifications</strong>. Actively used by guests at a real wedding.</p>
+        <p>Wedding invitation &amp; RSVP site built with <strong>Next.js</strong> and <strong>Firebase</strong>.
+          Real-time <strong>Telegram notifications</strong>. Actively used by guests at a real wedding.</p>
         <div class="project-links">
-          <a href="https://desuandtsiwedding.vercel.app/" target="_blank" class="proj-btn"><i class="fas fa-external-link-alt"></i> Live Site</a>
-          <a href="https://github.com/yabtesfu/Wedding-Website" target="_blank" class="proj-btn"><i class="fab fa-github"></i> GitHub</a>
+          <a href="https://desuandtsiwedding.vercel.app/" target="_blank" rel="noopener" class="proj-btn"><i class="fas fa-external-link-alt"></i> Live Site</a>
+          <a href="https://github.com/yabtesfu/Wedding-Website" target="_blank" rel="noopener" class="proj-btn"><i class="fab fa-github"></i> GitHub</a>
         </div>
       </div>
 
-      <div class="project-card reveal" data-delay="0">
-        <span class="proj-num">04</span>
-        <div class="project-image">
-          <img src="images/walpay_placeholder.jpg" alt="Walpay" />
-        </div>
-        <h3>Walpay Microblog</h3>
-        <p>Flask-based blogging backend with Bootstrap and Flask-Migrate. Full CRUD, database migrations and blog post management.</p>
-        <div class="project-links">
-          <a href="https://github.com/yabtesfu/Walpay_microblog" target="_blank" class="proj-btn"><i class="fab fa-github"></i> GitHub</a>
-        </div>
-      </div>
-
+      <!-- Gebeta Game -->
       <div class="project-card reveal" data-delay="100">
         <span class="proj-num">05</span>
         <div class="project-image">
           <img src="images/gebeta_placeholder.jpg" alt="Gebeta Game" />
         </div>
         <h3>Gebeta Game</h3>
-        <p>Traditional Ethiopian mancala game in <strong>Java + JavaFX</strong>. Showcases encapsulation, inheritance, abstraction and polymorphism.</p>
+        <p>Traditional Ethiopian mancala game in <strong>Java + JavaFX</strong>. Showcases encapsulation,
+          inheritance, abstraction and polymorphism.</p>
         <div class="project-links">
-          <a href="https://github.com/yabtesfu/Gebeta-Game" target="_blank" class="proj-btn"><i class="fab fa-github"></i> GitHub</a>
+          <a href="https://github.com/yabtesfu/Gebeta-Game" target="_blank" rel="noopener" class="proj-btn"><i class="fab fa-github"></i> GitHub</a>
         </div>
       </div>
 
+      <!-- Chessline -->
       <div class="project-card reveal" data-delay="200">
         <span class="proj-num">06</span>
         <div class="project-image">
           <img src="images/chessline_placeholder.jpg" alt="Chessline" />
         </div>
         <h3>Chessline Web App</h3>
-        <p>Chess learning platform. Contributed frontend components using <strong>Next.js</strong> and <strong>Tailwind CSS</strong> as assistant developer on a production team.</p>
+        <p>Chess learning platform. Contributed frontend components using <strong>Next.js</strong> and
+          <strong>Tailwind CSS</strong> as assistant developer on a production team.</p>
         <div class="project-links">
-          <a href="https://chessline.io" target="_blank" class="proj-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          <a href="https://chessline.io" target="_blank" rel="noopener" class="proj-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
         </div>
       </div>
 
     </div>
   </section>
 
-  <div class="metrics-row">
-    <!-- ===================== MONKEYTYPE TYPING ===================== -->
-    <section class="pg-section typing-section" id="typing">
+  <!-- ===================== ABOUT ===================== -->
+  <section class="pg-section about-section" id="about">
+    <div class="section-head reveal">
+      <p class="section-label">02 / ABOUT</p>
+      <h2 class="section-title">About <span>Me</span></h2>
+    </div>
+
+    <div class="about-wrap">
+      <div class="about-lead reveal">
+        <p>I am a software engineer drawn to the intersection of <strong>artificial intelligence</strong>,
+          <strong>infrastructure</strong>, and <strong>product development</strong>. My experience spans LLM
+          training and evaluation, cloud and infrastructure automation, and building full-stack applications
+          that turn ideas into real, usable products.</p>
+        <p>I enjoy working across the boundaries of software, from crafting intuitive user experiences to
+          understanding the systems, APIs, and infrastructure that power them. I approach engineering with
+          curiosity and intention, focusing on thoughtful architecture, reliable automation, and solutions
+          built to adapt as technology evolves.</p>
+        <p>For me, great software is not simply code that works. It is technology that solves a meaningful
+          problem, scales with purpose, and leaves room for what comes next.</p>
+      </div>
+
+      <div class="about-stack reveal" data-delay="120">
+        <h3>Tech Stack</h3>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">Flask</span>
+          <span class="tag">PHP</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">Next.js</span>
+          <span class="tag">React</span>
+          <span class="tag">Tailwind CSS</span>
+          <span class="tag">HTML / CSS</span>
+          <span class="tag">C++</span>
+          <span class="tag">Java</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Firebase</span>
+          <span class="tag">Docker</span>
+          <span class="tag">Linux</span>
+          <span class="tag">Git</span>
+          <span class="tag">REST APIs</span>
+          <span class="tag">WebSockets</span>
+          <span class="tag">NumPy</span>
+          <span class="tag">TensorFlow</span>
+          <span class="tag">CI / CD</span>
+          <span class="tag">FlutterFlow</span>
+          <span class="tag">DSA</span>
+        </div>
+
+        <div class="fun-stats">
+          <div class="fstat">
+            <span class="fstat-n">6+</span>
+            <span class="fstat-l">Projects</span>
+          </div>
+          <div class="fstat">
+            <span class="fstat-n">4th</span>
+            <span class="fstat-l">Year CS</span>
+          </div>
+          <div class="fstat">
+            <span class="fstat-n">138</span>
+            <span class="fstat-l">WPM Best</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== METRICS (merged: typing + leetcode) ===================== -->
+  <div class="metrics-row" id="metrics">
+    <!-- MONKEYTYPE TYPING -->
+    <div class="metric-col typing-section" id="typing">
       <div class="section-head reveal">
-        <p class="section-label">02 / TYPING SPEED</p>
+        <p class="section-label">02.1 / TYPING SPEED</p>
         <h2 class="section-title">Typing at the <span>Speed</span> of Thought</h2>
         <p class="section-sub">Tracked on MonkeyType, consistently hitting 130+ WPM.</p>
       </div>
 
-    <div class="typing-layout">
+      <div class="typing-layout">
+        <div class="wpm-hero reveal">
+          <div class="wpm-hero-num count-up" data-target="138">0</div>
+          <div class="wpm-hero-meta">
+            <span class="wpm-hero-label">WPM Best</span>
+            <span class="wpm-hero-mode">10 words · 100% accuracy</span>
+          </div>
+          <div class="wpm-hero-badge">Personal Record</div>
+        </div>
 
-      <!-- Top WPM hero stat -->
-      <div class="wpm-hero reveal">
-        <div class="wpm-hero-num count-up" data-target="138">0</div>
-        <div class="wpm-hero-meta">
-          <span class="wpm-hero-label">WPM Best</span>
-          <span class="wpm-hero-mode">10 words · 100% accuracy</span>
-        </div>
-        <div class="wpm-hero-badge">Personal Record</div>
-      </div>
-
-      <!-- WPM cards grid -->
-      <div class="wpm-grid reveal" data-delay="100">
-        <div class="wpm-card">
-          <span class="wpm-n count-up" data-target="130">0</span>
-          <span class="wpm-u">WPM</span>
-          <span class="wpm-m">15 seconds</span>
-          <span class="wpm-a acc-green">100% acc</span>
-        </div>
-        <div class="wpm-card">
-          <span class="wpm-n count-up" data-target="121">0</span>
-          <span class="wpm-u">WPM</span>
-          <span class="wpm-m">25 words</span>
-          <span class="wpm-a acc-green">95% acc</span>
-        </div>
-        <div class="wpm-card">
-          <span class="wpm-n count-up" data-target="120">0</span>
-          <span class="wpm-u">WPM</span>
-          <span class="wpm-m">30 seconds</span>
-          <span class="wpm-a acc-green">95% acc</span>
-        </div>
-        <div class="wpm-card">
-          <span class="wpm-n count-up" data-target="90">0</span>
-          <span class="wpm-u">WPM</span>
-          <span class="wpm-m">60 seconds</span>
-          <span class="wpm-a acc-yellow">95% acc</span>
-        </div>
-      </div>
-
-      <!-- Stats strip -->
-      <div class="typing-stats reveal" data-delay="150">
-        <div class="typ-chip">
-          <i class="fas fa-bolt"></i>
-          <div>
-            <span class="typ-val count-up" data-target="31089">0</span>
-            <span class="typ-key">Tests Started</span>
+        <div class="wpm-grid reveal" data-delay="100">
+          <div class="wpm-card">
+            <span class="wpm-n count-up" data-target="130">0</span>
+            <span class="wpm-u">WPM</span>
+            <span class="wpm-m">15 seconds</span>
+            <span class="wpm-a acc-green">100% acc</span>
+          </div>
+          <div class="wpm-card">
+            <span class="wpm-n count-up" data-target="121">0</span>
+            <span class="wpm-u">WPM</span>
+            <span class="wpm-m">25 words</span>
+            <span class="wpm-a acc-green">95% acc</span>
+          </div>
+          <div class="wpm-card">
+            <span class="wpm-n count-up" data-target="120">0</span>
+            <span class="wpm-u">WPM</span>
+            <span class="wpm-m">30 seconds</span>
+            <span class="wpm-a acc-green">95% acc</span>
+          </div>
+          <div class="wpm-card">
+            <span class="wpm-n count-up" data-target="90">0</span>
+            <span class="wpm-u">WPM</span>
+            <span class="wpm-m">60 seconds</span>
+            <span class="wpm-a acc-yellow">95% acc</span>
           </div>
         </div>
-        <div class="typ-chip">
-          <i class="fas fa-check"></i>
-          <div>
-            <span class="typ-val count-up" data-target="1161">0</span>
-            <span class="typ-key">Tests Completed</span>
+
+        <div class="typing-stats reveal" data-delay="150">
+          <div class="typ-chip">
+            <i class="fas fa-bolt"></i>
+            <div>
+              <span class="typ-val count-up" data-target="31089">0</span>
+              <span class="typ-key">Tests Started</span>
+            </div>
+          </div>
+          <div class="typ-chip">
+            <i class="fas fa-check"></i>
+            <div>
+              <span class="typ-val count-up" data-target="1161">0</span>
+              <span class="typ-key">Tests Completed</span>
+            </div>
+          </div>
+          <div class="typ-chip">
+            <i class="fas fa-clock"></i>
+            <div>
+              <span class="typ-val count-up" data-target="32" data-suffix="h+">0h+</span>
+              <span class="typ-key">Time Typing</span>
+            </div>
+          </div>
+          <div class="typ-chip">
+            <i class="fas fa-medal"></i>
+            <div>
+              <span class="typ-val count-up" data-target="17" data-prefix="Top " data-suffix="%">Top 0%</span>
+              <span class="typ-key">Global (15s mode)</span>
+            </div>
           </div>
         </div>
-        <div class="typ-chip">
-          <i class="fas fa-clock"></i>
-          <div>
-            <span class="typ-val count-up" data-target="32" data-suffix="h+">0h+</span>
-            <span class="typ-key">Time Typing</span>
-          </div>
-        </div>
-        <div class="typ-chip">
-          <i class="fas fa-medal"></i>
-          <div>
-            <span class="typ-val count-up" data-target="17" data-prefix="Top " data-suffix="%">Top 0%</span>
-            <span class="typ-key">Global (15s mode)</span>
-          </div>
+
+        <div class="typing-footer reveal" data-delay="200">
+          <a href="https://monkeytype.com/profile/Yabetse" target="_blank" rel="noopener" class="monkey-btn">
+            <i class="fas fa-keyboard"></i>
+            View MonkeyType Profile
+            <i class="fas fa-arrow-right"></i>
+          </a>
         </div>
       </div>
-
-      <!-- Profile link -->
-      <div class="typing-footer reveal" data-delay="200">
-        <a href="https://monkeytype.com/profile/Yabetse" target="_blank" rel="noopener" class="monkey-btn">
-          <i class="fas fa-keyboard"></i>
-          View MonkeyType Profile
-          <i class="fas fa-arrow-right"></i>
-        </a>
-      </div>
-
     </div>
-    </section>
 
-    <!-- ===================== LEETCODE ===================== -->
-    <section class="pg-section leetcode-section" id="leetcode">
+    <!-- LEETCODE -->
+    <div class="metric-col leetcode-section" id="leetcode">
       <div class="section-head reveal">
-        <p class="section-label">03 / LEETCODE</p>
+        <p class="section-label">02.2 / LEETCODE</p>
         <h2 class="section-title">Problem <span>Solving</span></h2>
         <p class="section-sub">Sharpening algorithmic thinking, one problem at a time.</p>
       </div>
 
       <div class="leet-grid">
-
         <div class="leet-donut-card reveal">
           <div class="donut-wrap">
             <canvas id="leetDonut"></canvas>
@@ -401,73 +461,67 @@
             <i class="fas fa-arrow-right"></i>
           </a>
         </div>
-
       </div>
-    </section>
+    </div>
   </div>
 
-  <!-- ===================== ABOUT ===================== -->
-  <section class="pg-section about-section" id="about">
+  <!-- ===================== EXPERIENCE ===================== -->
+  <section class="pg-section experience-section" id="experience">
     <div class="section-head reveal">
-      <p class="section-label">04 / ABOUT</p>
-      <h2 class="section-title">Who Am <span>I</span></h2>
+      <p class="section-label">03 / EXPERIENCE</p>
+      <h2 class="section-title">Where I've <span>Worked</span></h2>
     </div>
 
-    <div class="about-grid">
+    <div class="timeline">
 
-      <div class="about-text reveal">
-        <p>I'm <strong>Yabetse Tesfaye</strong>, a 3rd-year Computer Science student at American College of Technology. I'm driven by curiosity and love building things that actually work in the real world.</p>
-        <p>I have professional experience as a <strong>Data Annotator at Turing</strong>, contributing to training Large Language Models, giving me firsthand insight into how AI systems learn.</p>
-        <p>My main focus is <strong>backend development</strong> using Flask and PHP: REST APIs, authentication, session management and database integration. Currently pushing into full-stack and mobile with FlutterFlow.</p>
-
-        <div class="about-contact">
-          <h3>Get in touch</h3>
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=yabtesfu@gmail.com" target="_blank" rel="noopener" class="contact-line">
-            <i class="fas fa-envelope"></i> yabtesfu@gmail.com
-          </a>
-          <a href="https://www.linkedin.com/in/yabetse-tesfaye-bb4a0b2a1/" target="_blank" class="contact-line">
-            <i class="fab fa-linkedin"></i> LinkedIn
-          </a>
-          <a href="https://github.com/yabtesfu" target="_blank" class="contact-line">
-            <i class="fab fa-github"></i> GitHub
-          </a>
-          <a href="Resume/Yabetse%20Tesfaye%20-%20Resume.pdf" download="Yabetse_Tesfaye_Resume.pdf" class="contact-line">
-            <i class="fas fa-file-pdf"></i> Download Resume
-          </a>
+      <div class="exp-item reveal">
+        <div class="exp-dot"></div>
+        <div class="exp-card">
+          <div class="exp-top">
+            <h3>AI Data Annotator &amp; LLM Trainer</h3>
+            <span class="exp-period">Present</span>
+          </div>
+          <p class="exp-org"><i class="fas fa-building"></i> Turing</p>
+          <p class="exp-desc">Train and evaluate <strong>large language models</strong> — crafting high-quality
+            prompts and reference solutions, ranking model responses, and improving reasoning and code quality
+            across annotation projects. Firsthand insight into how modern AI systems actually learn.</p>
+          <div class="exp-tags">
+            <span>LLM Training</span><span>Evaluation</span><span>Prompt Engineering</span><span>RLHF</span>
+          </div>
         </div>
       </div>
 
-      <div class="about-right reveal" data-delay="150">
-        <h3>Tech Stack</h3>
-        <div class="tags">
-          <span class="tag tag-hot">Python</span>
-          <span class="tag tag-hot">Flask</span>
-          <span class="tag tag-hot">PHP</span>
-          <span class="tag">JavaScript</span>
-          <span class="tag">Next.js</span>
-          <span class="tag">HTML/CSS</span>
-          <span class="tag">C++</span>
-          <span class="tag">Java</span>
-          <span class="tag">Firebase</span>
-          <span class="tag">FlutterFlow</span>
-          <span class="tag">SQL</span>
-          <span class="tag">REST APIs</span>
-          <span class="tag tag-hot">DSA</span>
-          <span class="tag">Git</span>
+      <div class="exp-item reveal" data-delay="100">
+        <div class="exp-dot"></div>
+        <div class="exp-card">
+          <div class="exp-top">
+            <h3>Backend &amp; Infrastructure Engineer</h3>
+            <span class="exp-period">Ongoing</span>
+          </div>
+          <p class="exp-org"><i class="fas fa-code-branch"></i> Independent &amp; Open Source</p>
+          <p class="exp-desc">Design and ship systems end to end: a <strong>zero-dependency database engine</strong>
+            in pure Python, a real-time <strong>GAN training studio</strong> on FastAPI + WebSockets, and
+            full-stack products deployed to production. Focus on reliability, atomicity, containerization and
+            clean automation.</p>
+          <div class="exp-tags">
+            <span>Python</span><span>FastAPI</span><span>Docker</span><span>REST APIs</span><span>CI/CD</span>
+          </div>
         </div>
+      </div>
 
-        <div class="fun-stats">
-          <div class="fstat">
-            <span class="fstat-n">6+</span>
-            <span class="fstat-l">Projects</span>
+      <div class="exp-item reveal" data-delay="200">
+        <div class="exp-dot"></div>
+        <div class="exp-card">
+          <div class="exp-top">
+            <h3>BSc, Computer Science</h3>
+            <span class="exp-period">4th Year</span>
           </div>
-          <div class="fstat">
-            <span class="fstat-n">3rd</span>
-            <span class="fstat-l">Year CS</span>
-          </div>
-          <div class="fstat">
-            <span class="fstat-n">138</span>
-            <span class="fstat-l">WPM Best</span>
+          <p class="exp-org"><i class="fas fa-graduation-cap"></i> American College of Technology</p>
+          <p class="exp-desc">Studying computer science with a focus on <strong>backend systems</strong>,
+            <strong>data structures &amp; algorithms</strong>, and software architecture — balancing coursework
+            with hands-on building and competitive problem solving.</p>
+          <div class="exp-tags">
+            <span>DSA</span><span>Systems</span><span>Software Architecture</span>
           </div>
         </div>
       </div>
@@ -475,11 +529,41 @@
     </div>
   </section>
 
+  <!-- ===================== CONTACT ===================== -->
+  <section class="pg-section contact-section" id="contact">
+    <div class="section-head reveal">
+      <p class="section-label">04 / CONTACT</p>
+      <h2 class="section-title">Let's Build <span>Something</span></h2>
+      <p class="section-sub">Have a project, a role, or an idea in mind? My inbox is always open.</p>
+    </div>
+
+    <div class="contact-wrap reveal" data-delay="100">
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=yabtesfu@gmail.com" target="_blank" rel="noopener" class="contact-cta">
+        <i class="fas fa-envelope"></i> yabtesfu@gmail.com
+      </a>
+
+      <div class="contact-links">
+        <a href="https://www.linkedin.com/in/yabetse-tesfaye-bb4a0b2a1/" target="_blank" rel="noopener" class="contact-chip">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="https://github.com/yabtesfu" target="_blank" rel="noopener" class="contact-chip">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+        <a href="https://www.instagram.com/yab_tesfu/" target="_blank" rel="noopener" class="contact-chip">
+          <i class="fab fa-instagram"></i> Instagram
+        </a>
+        <a href="Resume/Yabetse%20Tesfaye%20-%20Resume.pdf" download="Yabetse_Tesfaye_Resume.pdf" class="contact-chip">
+          <i class="fas fa-file-pdf"></i> Resume
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- ===================== FOOTER ===================== -->
   <footer>
     <div class="footer-inner">
-      <p class="foot-name">Yabetse Tesfaye</p>
-      <p class="foot-copy">Designed & coded with passion, 2025</p>
+      <a href="#home" class="foot-sig">Yabetse<span class="sig-dot">.</span>T</a>
+      <p class="foot-copy">© 2026 Yabetse. Engineered with intention.</p>
     </div>
   </footer>
 

@@ -2,48 +2,58 @@
    YABETSE PORTFOLIO - script.js
    ================================================ */
 
-/* ---------- TYPING ANIMATION ---------- */
-const words = [
-  'Full Stack Developer',
-  'Backend Developer',
-  'Problem Solver',
-  'Web Developer',
-  'Tech Enthusiast',
-];
+/* ---------- HERO INTRO: typing + signature logo ---------- */
+const ROLE_TEXT = 'AI Systems & Infrastructure Engineer';
+const roleEl = document.getElementById('role-typing');
+const logoEl = document.getElementById('logo-sig');
 
-const typingEl = document.getElementById('role-typing');
-let wIdx = 0, cIdx = 0, deleting = false;
+let roleTimer = null;
 
-function type() {
-  if (!typingEl) return;
-  const word = words[wIdx];
-  typingEl.textContent = deleting
-    ? word.substring(0, cIdx--)
-    : word.substring(0, cIdx++);
-
-  if (!deleting && cIdx === word.length + 1) {
-    deleting = true;
-    return setTimeout(type, 1800);
-  }
-  if (deleting && cIdx === 0) {
-    deleting = false;
-    wIdx = (wIdx + 1) % words.length;
-  }
-  setTimeout(type, deleting ? 55 : 115);
+/* Type the role once, from empty, then stop. */
+function typeRole() {
+  if (!roleEl) return;
+  if (roleTimer) clearTimeout(roleTimer);
+  roleEl.textContent = '';
+  let i = 0;
+  const step = () => {
+    roleEl.textContent = ROLE_TEXT.slice(0, i);
+    if (i <= ROLE_TEXT.length) {
+      i++;
+      roleTimer = setTimeout(step, 55);
+    }
+  };
+  step();
 }
 
-document.addEventListener('DOMContentLoaded', type);
-
-
-/* ---------- PROFILE CARD FLIP ---------- */
-let flipped = false;
-
-function toggleImage() {
-  const inner = document.getElementById('image-card-inner');
-  if (!inner) return;
-  flipped = !flipped;
-  inner.style.transform = flipped ? 'rotateY(180deg)' : 'rotateY(0deg)';
+/* Replay the cursive signature write-on animation. */
+function playSignature() {
+  if (!logoEl) return;
+  logoEl.classList.remove('play');
+  void logoEl.offsetWidth; // force reflow so the animation restarts
+  logoEl.classList.add('play');
 }
+
+function playHeroIntro() {
+  playSignature();
+  typeRole();
+}
+
+window.addEventListener('load', playHeroIntro);
+/* Fallback in case load already fired */
+document.addEventListener('DOMContentLoaded', () => {
+  if (document.readyState === 'complete') playHeroIntro();
+});
+
+/* Replay the intro when the user scrolls back to the top after going down. */
+let scrolledAway = false;
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  if (y > 500) scrolledAway = true;
+  if (scrolledAway && y < 30) {
+    scrolledAway = false;
+    playHeroIntro();
+  }
+}, { passive: true });
 
 
 /* ---------- THEME TOGGLE ---------- */
