@@ -135,14 +135,15 @@
       <!-- imuStore DB -->
       <div class="project-card reveal" data-delay="0">
         <h3>imuStore DB</h3>
-        <p class="proj-desc">A database engine written in pure Python with zero dependencies.</p>
+        <p class="proj-desc">A distributed database engine built from scratch in pure Python, zero dependencies. From a copy-on-write B+ tree up to Raft replication and FoundationDB-style simulation testing.</p>
         <div class="proj-chips">
-          <span>Python</span><span>B-Tree Index</span><span>Append-Only</span><span>CLI</span>
+          <span>Python</span><span>B+ Tree</span><span>MVCC</span><span>Raft Consensus</span><span>Redis Protocol</span><span>Distributed Systems</span><span>Simulation Testing</span>
         </div>
         <ul class="proj-bullets">
-          <li>Immutable tree updates with atomic root-swap commits, so readers never see a half-written state.</li>
-          <li>Append-only storage with compaction to reclaim space, plus file locking for safe concurrent access.</li>
-          <li>Integrity audits and a full command-line interface, with zero third-party dependencies.</li>
+          <li>A copy-on-write B+ tree over append-only storage, with crash-safe commits: per-record checksums and double-buffered meta blocks that recover cleanly from power loss.</li>
+          <li>MVCC snapshots and optimistic transactions on a single node; Raft consensus for leader election, replication, and automatic failover across a cluster.</li>
+          <li>A Redis-protocol (RESP) server with a real-time change-data-capture changefeed, plus a query layer with secondary indexes, Prometheus metrics, and Docker.</li>
+          <li>Verified with deterministic, seed-reproducible simulation testing: tens of thousands of injected crash/recovery cycles, all replayable from a single seed.</li>
         </ul>
         <div class="project-links">
           <a href="https://github.com/yabtesfu/imustore-db-" target="_blank" rel="noopener" class="proj-btn"><i class="fab fa-github"></i> GitHub</a>
