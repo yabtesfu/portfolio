@@ -130,15 +130,15 @@ section {
   top: 0; left: 0;
   width: 26px; height: 26px;
   border-radius: 50%;
-  background: radial-gradient(circle, var(--accent) 0%, rgba(184,255,60,0.25) 45%, transparent 70%);
-  opacity: 0.55;
+  background: radial-gradient(circle, var(--accent) 0%, rgba(184,255,60,0.18) 45%, transparent 72%);
+  opacity: 0.16;
   pointer-events: none;
   z-index: 9998;
   transform: translate3d(-100px,-100px,0) translate(-50%,-50%);
   will-change: transform;
   transition: opacity 0.35s ease, width 0.25s ease, height 0.25s ease;
 }
-.cursor-dot.hovering { width: 44px; height: 44px; opacity: 0.8; }
+.cursor-dot.hovering { width: 40px; height: 40px; opacity: 0.28; }
 @media (hover: none), (max-width: 768px) {
   .cursor-dot { display: none; }
 }
@@ -341,12 +341,12 @@ nav a:hover::after, nav a.active::after { width: 100%; }
 /* Title */
 .hero-title {
   font-family: 'Arvo', Georgia, serif;
-  font-size: clamp(3rem,5vw,4.6rem);
+  font-size: clamp(2.7rem,4.2vw,4rem);
   font-weight: 700;
-  line-height: 1.06;
+  line-height: 1.08;
   letter-spacing: -0.5px;
   color: var(--text);
-  margin-bottom: 1.8rem;
+  margin-bottom: 1.6rem;
   animation: slideUp 0.7s ease 0.15s both;
 }
 .hero-title span { color: var(--accent); }
@@ -639,15 +639,15 @@ nav a:hover::after, nav a.active::after { width: 100%; }
 }
 .section-title {
   font-family: 'Arvo', Georgia, serif;
-  font-size: clamp(2.2rem,3vw,3.2rem);
+  font-size: clamp(1.9rem,2.4vw,2.6rem);
   font-weight: 700;
-  letter-spacing: -0.5px; line-height: 1.14;
+  letter-spacing: -0.5px; line-height: 1.16;
   color: var(--text);
 }
 .section-title span { color: var(--accent); }
 .section-sub {
-  margin-top: 1.5rem;
-  font-size: 1.7rem; color: var(--text-2);
+  margin-top: 1.3rem;
+  font-size: 1.5rem; color: var(--text-2);
   max-width: 480px;
 }
 
@@ -685,10 +685,10 @@ nav a:hover::after, nav a.active::after { width: 100%; }
   transition: opacity 0.35s ease;
 }
 .project-card:hover {
-  border-color: var(--accent-bdr);
+  border-color: var(--border);
   background: var(--bg-card-h);
-  transform: translateY(-7px);
-  box-shadow: 0 25px 60px rgba(0,0,0,0.3), 0 0 0 1px var(--accent-bdr);
+  z-index: 5;
+  box-shadow: 0 26px 60px rgba(0,0,0,0.4);
 }
 .project-card:hover::before { opacity: 1; }
 .proj-num {
@@ -853,9 +853,9 @@ nav a:hover::after, nav a.active::after { width: 100%; }
 }
 .metrics-row .section-title {
   font-family: 'Arvo', Georgia, serif;
-  font-size: clamp(2rem, 2.6vw, 2.9rem);
+  font-size: clamp(1.7rem, 2vw, 2.2rem);
   font-weight: 700;
-  line-height: 1.18;
+  line-height: 1.2;
   letter-spacing: -0.4px;
 }
 .metrics-row .section-sub {
@@ -911,7 +911,7 @@ nav a:hover::after, nav a.active::after { width: 100%; }
 }
 .donut-big {
   font-family: 'Arvo', Georgia, serif;
-  font-size: 4.2rem; font-weight: 700;
+  font-size: 3rem; font-weight: 700;
   color: var(--text); line-height: 1;
 }
 .donut-sub { font-size: 1.2rem; color: var(--text-2); }
@@ -955,7 +955,7 @@ nav a:hover::after, nav a.active::after { width: 100%; }
 .chip-val {
   display: block;
   font-family: 'Arvo', Georgia, serif;
-  font-size: 2.6rem; font-weight: 700;
+  font-size: 2rem; font-weight: 700;
   color: var(--text); line-height: 1;
 }
 .chip-label { display: block; font-size: 1.2rem; color: var(--text-2); margin-top: 0.2rem; }
@@ -1012,7 +1012,7 @@ nav a:hover::after, nav a.active::after { width: 100%; }
 }
 .wpm-hero-num {
   font-family: 'Arvo', Georgia, serif;
-  font-size: clamp(4.5rem, 7vw, 7.5rem);
+  font-size: clamp(3.2rem, 4.5vw, 4.6rem);
   font-weight: 800;
   color: var(--accent);
   line-height: 1;
@@ -1026,7 +1026,7 @@ nav a:hover::after, nav a.active::after { width: 100%; }
 }
 .wpm-hero-label {
   font-family: 'Arvo', Georgia, serif;
-  font-size: 2.2rem;
+  font-size: 1.7rem;
   font-weight: 800;
   color: var(--text);
   letter-spacing: 0;
@@ -1072,7 +1072,7 @@ nav a:hover::after, nav a.active::after { width: 100%; }
 }
 .wpm-n {
   font-family: 'Arvo', Georgia, serif;
-  font-size: 4.5rem;
+  font-size: 3rem;
   font-weight: 800;
   color: var(--text);
   line-height: 1;
@@ -1114,7 +1114,7 @@ nav a:hover::after, nav a.active::after { width: 100%; }
 .typ-val {
   display: block;
   font-family: 'Arvo', Georgia, serif;
-  font-size: 2.4rem; font-weight: 700;
+  font-size: 1.9rem; font-weight: 700;
   color: var(--text); line-height: 1;
 }
 .typ-key { display: block; font-size: 1.2rem; color: var(--text-2); margin-top: 0.2rem; }
@@ -1263,12 +1263,14 @@ nav a:hover::after, nav a.active::after { width: 100%; }
   border: 1px solid var(--border);
   border-radius: 1.6rem;
   padding: 2.4rem 2.6rem;
-  transition: border-color 0.3s ease, transform 0.3s ease, background 0.3s ease;
+  transform-style: preserve-3d;
+  transition: border-color 0.3s ease, transform 0.18s ease-out, background 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
 }
 .exp-card:hover {
-  border-color: var(--accent-bdr);
+  border-color: var(--border);
   background: var(--bg-card-h);
-  transform: translateX(5px);
+  box-shadow: 0 22px 50px rgba(0,0,0,0.35);
 }
 .exp-top {
   display: flex; justify-content: space-between; align-items: baseline;
@@ -1341,11 +1343,11 @@ nav a:hover::after, nav a.active::after { width: 100%; }
   display: flex; flex-direction: column; align-items: center; gap: 2.6rem;
 }
 .contact-cta {
-  display: inline-flex; align-items: center; gap: 1.2rem;
+  display: inline-flex; align-items: center; gap: 1rem;
   font-family: 'Arvo', Georgia, serif;
-  font-size: clamp(1.7rem, 3vw, 2.6rem); font-weight: 700;
+  font-size: clamp(1.4rem, 2vw, 1.9rem); font-weight: 700;
   color: var(--text);
-  padding: 1.6rem 3rem;
+  padding: 1.3rem 2.4rem;
   border-radius: 1.4rem;
   border: 1px solid var(--accent-bdr);
   background: var(--accent-dim);
@@ -1394,7 +1396,7 @@ footer {
   transition: opacity 0.2s ease;
 }
 .foot-sig:hover { opacity: 0.8; }
-.foot-copy { font-size: 1.4rem; color: var(--text-2); font-family: var(--font-mono); }
+.foot-copy { font-size: 1.15rem; color: var(--text-2); font-family: var(--font-mono); }
 
 /* =============================================
    SCROLL REVEAL
@@ -1414,14 +1416,17 @@ footer {
   .cursor-dot { display: none; }
 }
 
-/* Featured / highlighted card accent */
-.project-card.featured,
-.exp-card.featured {
-  border-color: var(--accent-bdr);
-  box-shadow: 0 0 0 1px var(--accent-bdr), 0 22px 55px rgba(0,0,0,0.32);
-  background: linear-gradient(180deg, var(--accent-dim), var(--bg-card));
+/* Crooked project cards that pop + counter-bend on hover */
+.projects-grid .project-card:nth-child(odd)  { transform: rotate(-1.4deg); }
+.projects-grid .project-card:nth-child(even) { transform: rotate(1.4deg); }
+.projects-grid .project-card:nth-child(3n+2) { transform: rotate(0.8deg); }
+.projects-grid .project-card:nth-child(odd):hover {
+  transform: rotate(2deg) scale(1.05) translateY(-8px);
 }
-.project-card.featured::before { opacity: 1; }
+.projects-grid .project-card:nth-child(even):hover,
+.projects-grid .project-card:nth-child(3n+2):hover {
+  transform: rotate(-2deg) scale(1.05) translateY(-8px);
+}
 
 /* =============================================
    KEYFRAMES

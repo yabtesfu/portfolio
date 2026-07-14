@@ -472,3 +472,24 @@ if (headerEl) {
       : 'none';
   }, { passive: true });
 }
+
+
+/* ---------- EXPERIENCE CARD CURSOR-TILT ---------- */
+(function () {
+  const canHover = window.matchMedia('(hover: hover)').matches;
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!canHover || reduced) return;
+
+  document.querySelectorAll('.exp-card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const r = card.getBoundingClientRect();
+      const px = (e.clientX - r.left) / r.width;   // 0 = left edge, 1 = right edge
+      const py = (e.clientY - r.top) / r.height;   // 0 = top,  1 = bottom
+      const rotY = (px - 0.5) * 9;                 // lean toward the cursor side
+      const rotX = (0.5 - py) * 5;
+      card.style.transform =
+        `perspective(900px) rotateY(${rotY.toFixed(2)}deg) rotateX(${rotX.toFixed(2)}deg) scale(1.025)`;
+    });
+    card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+  });
+})();
