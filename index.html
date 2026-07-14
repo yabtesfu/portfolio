@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Yabetse Tesfaye | AI Systems & Infrastructure Engineer</title>
 
-  <!-- Favicon -->
-  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <!-- Favicon (theme-adaptive, swapped in script.js) -->
+  <link id="favicon" rel="icon" href="favicon-dark.svg" type="image/svg+xml" />
   <meta name="theme-color" content="#09090b" />
 
   <!-- Fonts: Arvo (site) + Dancing Script (signature logo) -->
@@ -34,6 +34,12 @@
     <div class="orb orb-3"></div>
   </div>
 
+  <!-- Dotted grid backdrop -->
+  <div class="dot-grid" aria-hidden="true"></div>
+
+  <!-- Cursor-following glow -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+
   <!-- ===================== HEADER ===================== -->
   <header id="site-header">
     <a href="#home" class="logo" id="logo-sig" aria-label="Yabetse T, home">
@@ -60,11 +66,6 @@
   <!-- ===================== HERO (centered) ===================== -->
   <section class="hero" id="home">
     <div class="hero-inner">
-
-      <div class="hero-badge">
-        <span class="badge-dot"></span>
-        Open to opportunities
-      </div>
 
       <h1 class="hero-title">
         Yabetse <span>Tesfaye</span>
@@ -132,7 +133,7 @@
     <div class="projects-grid">
 
       <!-- imuStore DB -->
-      <div class="project-card reveal" data-delay="0">
+      <div class="project-card featured reveal" data-delay="0">
         <h3>imuStore DB</h3>
         <p class="proj-desc">A database engine written in pure Python with zero dependencies.</p>
         <div class="proj-chips">
@@ -457,7 +458,7 @@
 
       <div class="exp-item reveal">
         <div class="exp-dot"></div>
-        <div class="exp-card">
+        <div class="exp-card featured">
           <div class="exp-top">
             <h3>AI Infrastructure &amp; DevOps Training Engineer</h3>
             <span class="exp-period">03/2026 – 06/2026</span>

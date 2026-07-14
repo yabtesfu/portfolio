@@ -56,8 +56,15 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 
-/* ---------- THEME TOGGLE ---------- */
+/* ---------- THEME TOGGLE + THEME-ADAPTIVE FAVICON ---------- */
 const themeToggle = document.getElementById('theme-toggle');
+const faviconLink = document.getElementById('favicon');
+const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+
+function applyThemeChrome(isLight) {
+  if (faviconLink) faviconLink.href = isLight ? 'favicon-light.svg' : 'favicon-dark.svg';
+  if (themeColorMeta) themeColorMeta.setAttribute('content', isLight ? '#f6f6f4' : '#09090b');
+}
 
 if (themeToggle) {
   const saved = localStorage.getItem('theme');
@@ -68,13 +75,45 @@ if (themeToggle) {
     document.body.classList.add('light-theme');
     themeToggle.classList.add('light');
   }
+  applyThemeChrome(theme === 'light');
 
   themeToggle.addEventListener('click', () => {
     document.body.classList.toggle('light-theme');
     themeToggle.classList.toggle('light');
     const isLight = document.body.classList.contains('light-theme');
     localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    applyThemeChrome(isLight);
   });
+}
+
+
+/* ---------- CURSOR-FOLLOWING GLOW DOT ---------- */
+const cursorDot = document.querySelector('.cursor-dot');
+if (cursorDot && window.matchMedia('(hover: hover)').matches) {
+  let tx = window.innerWidth / 2, ty = window.innerHeight / 2;
+  let cx = tx, cy = ty;
+
+  window.addEventListener('mousemove', e => {
+    tx = e.clientX; ty = e.clientY;
+    cursorDot.style.opacity = '';
+  }, { passive: true });
+
+  document.addEventListener('mouseleave', () => { cursorDot.style.opacity = '0'; });
+
+  const interactive = 'a, button, .project-card, .exp-card, .theme-switch, .social-pill, .tag, .contact-chip';
+  document.addEventListener('mouseover', e => {
+    if (e.target.closest(interactive)) cursorDot.classList.add('hovering');
+  });
+  document.addEventListener('mouseout', e => {
+    if (e.target.closest(interactive)) cursorDot.classList.remove('hovering');
+  });
+
+  (function loopDot() {
+    cx += (tx - cx) * 0.16;
+    cy += (ty - cy) * 0.16;
+    cursorDot.style.transform = `translate3d(${cx}px, ${cy}px, 0) translate(-50%, -50%)`;
+    requestAnimationFrame(loopDot);
+  })();
 }
 
 
