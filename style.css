@@ -1338,42 +1338,53 @@ nav a:hover::after, nav a.active::after { width: 100%; }
   margin-left: auto; margin-right: auto;
   text-align: center; max-width: 720px;
 }
-.contact-section .section-sub { margin-left: auto; margin-right: auto; }
-.contact-wrap {
-  display: flex; flex-direction: column; align-items: center; gap: 2.6rem;
+
+.contact-card {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 4.5rem 4rem;
+  border: 1px solid var(--border);
+  border-radius: 2rem;
+  background: var(--bg-card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  transition: border-color 0.3s ease;
 }
-.contact-cta {
-  display: inline-flex; align-items: center; gap: 1rem;
-  font-family: 'Arvo', Georgia, serif;
-  font-size: clamp(1.4rem, 2vw, 1.9rem); font-weight: 700;
-  color: var(--text);
-  padding: 1.3rem 2.4rem;
-  border-radius: 1.4rem;
-  border: 1px solid var(--accent-bdr);
-  background: var(--accent-dim);
-  transition: all 0.3s ease;
-  word-break: break-word;
-}
-.contact-cta i { color: var(--accent); }
-.contact-cta:hover {
-  background: var(--accent); color: var(--on-accent);
-  transform: translateY(-3px);
-  box-shadow: 0 14px 36px rgba(184,255,60,0.25);
-}
-.contact-cta:hover i { color: var(--on-accent); }
-.contact-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
-.contact-chip {
-  display: inline-flex; align-items: center; gap: 0.8rem;
-  padding: 1rem 1.8rem; border-radius: 0.9rem;
-  border: 1px solid var(--border); background: var(--bg-card);
+.contact-card:hover { border-color: var(--accent-bdr); }
+.contact-line {
+  font-size: 1.6rem;
+  line-height: 1.7;
   color: var(--text-2);
-  font-size: 1.45rem; font-weight: 500;
-  transition: all 0.3s ease;
+  max-width: 460px;
 }
-.contact-chip i { color: var(--accent); }
-.contact-chip:hover {
-  border-color: var(--accent-bdr); color: var(--text);
-  background: var(--accent-dim); transform: translateY(-3px);
+.contact-icons {
+  display: flex;
+  align-items: center;
+  gap: 3.2rem;
+}
+.contact-icons a {
+  font-size: 2.3rem;
+  color: var(--text-2);
+  line-height: 1;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+.contact-icons a:hover {
+  color: var(--accent);
+  transform: translateY(-4px);
+}
+.contact-email {
+  font-size: 1.6rem;
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--border);
+  transition: color 0.25s ease, text-decoration-color 0.25s ease;
+}
+.contact-email:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
 }
 
 /* =============================================
