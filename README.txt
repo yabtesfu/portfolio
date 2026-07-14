@@ -1,4 +1,4 @@
-Yabetse Tesfaye — Personal Portfolio
+Yabetse Tesfaye | Personal Portfolio
 ====================================
 
 About
@@ -6,7 +6,7 @@ About
 Yabetse Tesfaye is a software engineer working at the intersection of artificial
 intelligence, infrastructure, and product. His work spans large language model
 training and evaluation, cloud and infrastructure automation, and full-stack
-product development — turning complex ideas into reliable systems designed to
+product development, turning complex ideas into reliable systems designed to
 evolve and scale. He builds end to end, from intuitive user experiences to the
 systems, APIs, and infrastructure that power them, with a focus on thoughtful
 architecture, reliable automation, and clean, maintainable code.
@@ -15,7 +15,7 @@ architecture, reliable automation, and clean, maintainable code.
 Overview
 --------
 A fast, responsive single-page portfolio built with plain HTML, CSS, and
-JavaScript — no framework, no build step. The site is organized into five
+JavaScript, with no framework and no build step. The site is organized into five
 sections:
 
   Home        Centered hero with an animated signature logo, a single-run
@@ -30,7 +30,7 @@ sections:
 Featured Projects
 -----------------
   imuStore DB        Append-only database engine in pure Python with zero
-                     dependencies — immutable tree updates and atomic commits.
+                     dependencies, using immutable tree updates and atomic commits.
   GAN Observatory    Real-time, in-browser studio for training and analyzing
                      GANs (Python, FastAPI, WebSockets, NumPy, Docker).
   Kuas Meda          Full-stack football field booking and player-matching

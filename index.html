@@ -32,7 +32,7 @@
 
   <!-- ===================== HEADER ===================== -->
   <header id="site-header">
-    <a href="#home" class="logo" id="logo-sig" aria-label="Yabetse T — home">
+    <a href="#home" class="logo" id="logo-sig" aria-label="Yabetse T, home">
       <span class="sig">Yabetse<span class="sig-dot">.</span>T</span>
     </a>
 
@@ -86,9 +86,6 @@
         <a href="https://github.com/yabtesfu" target="_blank" rel="noopener" class="btn-secondary">
           <i class="fab fa-github"></i> GitHub
         </a>
-        <a href="https://leetcode.com/u/yabtesfu/" target="_blank" rel="noopener" class="btn-secondary">
-          <i class="fas fa-code"></i> LeetCode
-        </a>
       </div>
 
       <div class="social-row">
@@ -132,58 +129,50 @@
 
       <!-- imuStore DB -->
       <div class="project-card reveal" data-delay="0">
-        <span class="proj-num">01</span>
-        <div class="project-image">
-          <img src="images/imustore-card.png" alt="imuStore DB — append-only database engine" />
-        </div>
         <h3>imuStore DB</h3>
-        <p>Database engine written in pure <strong>Python</strong> with <strong>zero dependencies</strong>.
-          Every update creates a new immutable tree path; a commit is one <strong>atomic root swap</strong>, so
-          readers never see a half-written state. Includes <strong>append-only storage</strong>, file locking,
-          <strong>compaction</strong>, <strong>integrity audits</strong> and a full <strong>CLI</strong>.</p>
+        <p class="proj-desc">A database engine written in pure Python with zero dependencies.</p>
+        <div class="proj-chips">
+          <span>Python</span><span>B-Tree Index</span><span>Append-Only</span><span>CLI</span>
+        </div>
+        <ul class="proj-bullets">
+          <li>Immutable tree updates with atomic root-swap commits, so readers never see a half-written state.</li>
+          <li>Append-only storage with compaction to reclaim space, plus file locking for safe concurrent access.</li>
+          <li>Integrity audits and a full command-line interface, with zero third-party dependencies.</li>
+        </ul>
         <div class="project-links">
-          <a href="https://github.com/yabtesfu/imustore-db-" target="_blank" rel="noopener" class="proj-btn">
-            <i class="fab fa-github"></i> GitHub
-          </a>
+          <a href="https://github.com/yabtesfu/imustore-db-" target="_blank" rel="noopener" class="proj-btn"><i class="fab fa-github"></i> GitHub</a>
         </div>
       </div>
 
       <!-- GAN Observatory -->
       <div class="project-card reveal" data-delay="100">
-        <span class="proj-num">02</span>
-        <div class="project-image">
-          <img src="images/gan lab tensorflow.jpg" alt="GAN Observatory — real-time GAN training studio" />
-        </div>
         <h3>GAN Observatory</h3>
-        <p><strong>GAN Observatory</strong> is a real-time, in-browser studio for training and analyzing
-          <strong>Generative Adversarial Networks</strong>. You watch a neural net learn a distribution live,
-          <strong>steer training mid-run</strong> (learning rate, loss, stabilizers) while a mode-collapse alarm
-          watches, <strong>save and serve models over a REST API</strong>, and race two GANs side by side in an
-          <strong>A/B derby</strong> with a time-travel scrubber. Built with <strong>Python, FastAPI, WebSockets
-          and NumPy</strong>, containerized with Docker and backed by 42 tests and CI.</p>
+        <p class="proj-desc">A real-time, in-browser studio for training and analyzing GANs.</p>
+        <div class="proj-chips">
+          <span>Python</span><span>FastAPI</span><span>WebSockets</span><span>NumPy</span><span>Docker</span>
+        </div>
+        <ul class="proj-bullets">
+          <li>Watch a network learn a distribution live and steer training mid-run while a mode-collapse alarm watches.</li>
+          <li>Save and serve trained models over a REST API; race two GANs in an A/B derby with a time-travel scrubber.</li>
+          <li>Containerized with Docker and backed by 42 tests and continuous integration.</li>
+        </ul>
         <div class="project-links">
-          <a href="https://github.com/yabtesfu/gan-lab-tensorflow" target="_blank" rel="noopener" class="proj-btn">
-            <i class="fab fa-github"></i> GitHub
-          </a>
+          <a href="https://github.com/yabtesfu/gan-lab-tensorflow" target="_blank" rel="noopener" class="proj-btn"><i class="fab fa-github"></i> GitHub</a>
         </div>
       </div>
 
       <!-- Kuas Meda -->
       <div class="project-card reveal" data-delay="200">
-        <div class="project-badge project-badge-live">Live</div>
-        <span class="proj-num">03</span>
-        <div class="project-image has-logo">
-          <img src="images/Kuas Meda image.jpg" alt="Kuas Meda — football field booking dashboard" />
-          <span class="proj-logo"><img src="images/kuasmeda-logo.png" alt="Kuas Meda logo" /></span>
-        </div>
         <h3>Kuas Meda</h3>
-        <p><strong>Kuas Meda</strong> is a full-stack <strong>football field booking</strong> and
-          <strong>player-matching</strong> platform designed for <strong>Addis Ababa</strong>. It solves manual
-          field reservations, unclear waiting lines, and the struggle to find enough players for a match. Players
-          browse available fields, view open groups, apply to join matches, and manage upcoming sessions. Group
-          organizers create sessions, accept or reject applicants, and manage team capacity. Field operators get a
-          dashboard to add fields, create time slots, and manage daily schedules — with admin views,
-          <strong>role-based access</strong>, and a foundation for payments, player ratings and smart matching.</p>
+        <p class="proj-desc">A full-stack football field booking and player-matching platform for Addis Ababa.</p>
+        <div class="proj-chips">
+          <span>Next.js</span><span>Full-Stack</span><span>Role-Based Access</span><span>Vercel</span>
+        </div>
+        <ul class="proj-bullets">
+          <li>Players browse fields, view open groups, apply to join matches, and manage upcoming sessions.</li>
+          <li>Organizers create sessions and manage applicants; field operators manage fields, slots, and daily schedules.</li>
+          <li>Admin views and role-based access, with a foundation for payments, ratings, and smart matching.</li>
+        </ul>
         <div class="project-links">
           <a href="https://kuas-meda.vercel.app/" target="_blank" rel="noopener" class="proj-btn"><i class="fas fa-external-link-alt"></i> Live Site</a>
           <a href="https://github.com/yabtesfu/kuas-meda" target="_blank" rel="noopener" class="proj-btn"><i class="fab fa-github"></i> GitHub</a>
@@ -192,16 +181,15 @@
 
       <!-- Wedding Website -->
       <div class="project-card reveal" data-delay="0">
-        <div class="project-badge project-badge-live">Live</div>
-        <span class="proj-num">04</span>
-        <div class="project-image wedding-placeholder">
-          <i class="fas fa-heart"></i>
-          <i class="fas fa-ring"></i>
-          <i class="fas fa-heart"></i>
-        </div>
         <h3>Wedding Website</h3>
-        <p>Wedding invitation &amp; RSVP site built with <strong>Next.js</strong> and <strong>Firebase</strong>.
-          Real-time <strong>Telegram notifications</strong>. Actively used by guests at a real wedding.</p>
+        <p class="proj-desc">A wedding invitation and RSVP site used at a real wedding.</p>
+        <div class="proj-chips">
+          <span>Next.js</span><span>Firebase</span><span>Telegram API</span>
+        </div>
+        <ul class="proj-bullets">
+          <li>Real-time RSVP handling with Firebase and instant Telegram notifications.</li>
+          <li>Deployed and actively used by guests at a live wedding celebration.</li>
+        </ul>
         <div class="project-links">
           <a href="https://desuandtsiwedding.vercel.app/" target="_blank" rel="noopener" class="proj-btn"><i class="fas fa-external-link-alt"></i> Live Site</a>
           <a href="https://github.com/yabtesfu/Wedding-Website" target="_blank" rel="noopener" class="proj-btn"><i class="fab fa-github"></i> GitHub</a>
@@ -210,13 +198,15 @@
 
       <!-- Gebeta Game -->
       <div class="project-card reveal" data-delay="100">
-        <span class="proj-num">05</span>
-        <div class="project-image">
-          <img src="images/gebeta_placeholder.jpg" alt="Gebeta Game" />
-        </div>
         <h3>Gebeta Game</h3>
-        <p>Traditional Ethiopian mancala game in <strong>Java + JavaFX</strong>. Showcases encapsulation,
-          inheritance, abstraction and polymorphism.</p>
+        <p class="proj-desc">A traditional Ethiopian mancala game for the desktop.</p>
+        <div class="proj-chips">
+          <span>Java</span><span>JavaFX</span><span>OOP</span>
+        </div>
+        <ul class="proj-bullets">
+          <li>Desktop game built with JavaFX and a clean object-oriented design.</li>
+          <li>Demonstrates encapsulation, inheritance, abstraction, and polymorphism.</li>
+        </ul>
         <div class="project-links">
           <a href="https://github.com/yabtesfu/Gebeta-Game" target="_blank" rel="noopener" class="proj-btn"><i class="fab fa-github"></i> GitHub</a>
         </div>
@@ -224,13 +214,15 @@
 
       <!-- Chessline -->
       <div class="project-card reveal" data-delay="200">
-        <span class="proj-num">06</span>
-        <div class="project-image">
-          <img src="images/chessline_placeholder.jpg" alt="Chessline" />
-        </div>
         <h3>Chessline Web App</h3>
-        <p>Chess learning platform. Contributed frontend components using <strong>Next.js</strong> and
-          <strong>Tailwind CSS</strong> as assistant developer on a production team.</p>
+        <p class="proj-desc">A chess-learning platform (frontend contribution).</p>
+        <div class="proj-chips">
+          <span>Next.js</span><span>Tailwind CSS</span><span>SEO</span>
+        </div>
+        <ul class="proj-bullets">
+          <li>Built responsive frontend components as an assistant developer on a production team.</li>
+          <li>Translated Figma designs into pixel-perfect, SEO-optimized pages.</li>
+        </ul>
         <div class="project-links">
           <a href="https://chessline.io" target="_blank" rel="noopener" class="proj-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
         </div>
@@ -289,21 +281,6 @@
           <span class="tag">CI / CD</span>
           <span class="tag">FlutterFlow</span>
           <span class="tag">DSA</span>
-        </div>
-
-        <div class="fun-stats">
-          <div class="fstat">
-            <span class="fstat-n">6+</span>
-            <span class="fstat-l">Projects</span>
-          </div>
-          <div class="fstat">
-            <span class="fstat-n">4th</span>
-            <span class="fstat-l">Year CS</span>
-          </div>
-          <div class="fstat">
-            <span class="fstat-n">138</span>
-            <span class="fstat-l">WPM Best</span>
-          </div>
         </div>
       </div>
     </div>
@@ -478,15 +455,18 @@
         <div class="exp-dot"></div>
         <div class="exp-card">
           <div class="exp-top">
-            <h3>AI Data Annotator &amp; LLM Trainer</h3>
-            <span class="exp-period">Present</span>
+            <h3>AI Infrastructure &amp; DevOps Training Engineer</h3>
+            <span class="exp-period">03/2026 – 06/2026</span>
           </div>
-          <p class="exp-org"><i class="fas fa-building"></i> Turing</p>
-          <p class="exp-desc">Train and evaluate <strong>large language models</strong> — crafting high-quality
-            prompts and reference solutions, ranking model responses, and improving reasoning and code quality
-            across annotation projects. Firsthand insight into how modern AI systems actually learn.</p>
+          <p class="exp-org"><i class="fas fa-building"></i> Revelo <span class="exp-loc">· Remote</span></p>
+          <ul class="exp-bullets">
+            <li>Worked on Infrastructure as Code (IaC) and AI training tasks focused on improving the reasoning and code generation capabilities of Amazon Nova Lite v2 models.</li>
+            <li>Created and evaluated complex technical tasks involving YAML, JSON, Python, AWS CDK (Java), Terraform, and cloud infrastructure workflows.</li>
+            <li>Designed high-difficulty prompts, validation scenarios, and infrastructure configurations to train and benchmark AI systems on real-world DevOps and cloud engineering problems.</li>
+            <li>Contributed to improving model accuracy in infrastructure automation, configuration management, and cloud deployment reasoning.</li>
+          </ul>
           <div class="exp-tags">
-            <span>LLM Training</span><span>Evaluation</span><span>Prompt Engineering</span><span>RLHF</span>
+            <span>Terraform</span><span>AWS CDK</span><span>Python</span><span>IaC</span><span>YAML</span>
           </div>
         </div>
       </div>
@@ -495,16 +475,17 @@
         <div class="exp-dot"></div>
         <div class="exp-card">
           <div class="exp-top">
-            <h3>Backend &amp; Infrastructure Engineer</h3>
-            <span class="exp-period">Ongoing</span>
+            <h3>LLM Model Trainer and Data Annotator</h3>
+            <span class="exp-period">07/2025 – 11/2025</span>
           </div>
-          <p class="exp-org"><i class="fas fa-code-branch"></i> Independent &amp; Open Source</p>
-          <p class="exp-desc">Design and ship systems end to end: a <strong>zero-dependency database engine</strong>
-            in pure Python, a real-time <strong>GAN training studio</strong> on FastAPI + WebSockets, and
-            full-stack products deployed to production. Focus on reliability, atomicity, containerization and
-            clean automation.</p>
+          <p class="exp-org"><i class="fas fa-building"></i> Turing <span class="exp-loc">· Remote</span></p>
+          <ul class="exp-bullets">
+            <li>Trained LLMs by manually annotating video data and writing precise, time-frame-level descriptions to help the model understand context and actions per second.</li>
+            <li>Shifted from model trainer to data annotator to improve training data quality, ensuring the AI learns accurate temporal patterns.</li>
+            <li>Tested model responses by designing prompts and verifying output correctness against expected behavior, closing the feedback loop for continuous improvement.</li>
+          </ul>
           <div class="exp-tags">
-            <span>Python</span><span>FastAPI</span><span>Docker</span><span>REST APIs</span><span>CI/CD</span>
+            <span>LLM Training</span><span>Data Annotation</span><span>Prompting</span><span>Evaluation</span>
           </div>
         </div>
       </div>
@@ -513,15 +494,18 @@
         <div class="exp-dot"></div>
         <div class="exp-card">
           <div class="exp-top">
-            <h3>BSc, Computer Science</h3>
-            <span class="exp-period">4th Year</span>
+            <h3>Frontend Developer</h3>
+            <span class="exp-period">03/2025 – 05/2025</span>
           </div>
-          <p class="exp-org"><i class="fas fa-graduation-cap"></i> American College of Technology</p>
-          <p class="exp-desc">Studying computer science with a focus on <strong>backend systems</strong>,
-            <strong>data structures &amp; algorithms</strong>, and software architecture — balancing coursework
-            with hands-on building and competitive problem solving.</p>
+          <p class="exp-org"><i class="fas fa-building"></i> Upwork <span class="exp-loc">· Remote</span></p>
+          <ul class="exp-bullets">
+            <li>Developed a high-performance frontend for the Chessline website using Next.js, ensuring fast page loads and smooth navigation.</li>
+            <li>Translated the company's design vision from Figma into a fully responsive, pixel-perfect layout.</li>
+            <li>Implemented SEO best practices (meta tags, structured data, performance optimization) to improve search visibility.</li>
+            <li>Fixed cross-device responsiveness issues, delivering a consistent user experience across desktop, tablet, and mobile.</li>
+          </ul>
           <div class="exp-tags">
-            <span>DSA</span><span>Systems</span><span>Software Architecture</span>
+            <span>Next.js</span><span>Figma</span><span>SEO</span><span>Responsive</span>
           </div>
         </div>
       </div>
@@ -562,7 +546,6 @@
   <!-- ===================== FOOTER ===================== -->
   <footer>
     <div class="footer-inner">
-      <a href="#home" class="foot-sig">Yabetse<span class="sig-dot">.</span>T</a>
       <p class="foot-copy">© 2026 Yabetse. Engineered with intention.</p>
     </div>
   </footer>
