@@ -135,15 +135,14 @@
       <!-- imuStore DB -->
       <div class="project-card reveal" data-delay="0">
         <h3>imuStore DB</h3>
-        <p class="proj-desc">A distributed database engine built from scratch in pure Python, zero dependencies. From a copy-on-write B+ tree up to Raft replication and FoundationDB-style simulation testing.</p>
+        <p class="proj-desc">A distributed database engine built from scratch in pure Python, zero dependencies.</p>
         <div class="proj-chips">
-          <span>Python</span><span>B+ Tree</span><span>MVCC</span><span>Raft Consensus</span><span>Redis Protocol</span><span>Distributed Systems</span><span>Simulation Testing</span>
+          <span>Python</span><span>B+ Tree</span><span>MVCC</span><span>Raft Consensus</span><span>Distributed Systems</span>
         </div>
         <ul class="proj-bullets">
-          <li>A copy-on-write B+ tree over append-only storage, with crash-safe commits: per-record checksums and double-buffered meta blocks that recover cleanly from power loss.</li>
-          <li>MVCC snapshots and optimistic transactions on a single node; Raft consensus for leader election, replication, and automatic failover across a cluster.</li>
-          <li>A Redis-protocol (RESP) server with a real-time change-data-capture changefeed, plus a query layer with secondary indexes, Prometheus metrics, and Docker.</li>
-          <li>Verified with deterministic, seed-reproducible simulation testing: tens of thousands of injected crash/recovery cycles, all replayable from a single seed.</li>
+          <li>Copy-on-write B+ tree over append-only storage, with crash-safe commits that recover cleanly from power loss.</li>
+          <li>MVCC snapshots and optimistic transactions, plus Raft consensus for leader election, replication, and failover across a cluster.</li>
+          <li>Redis-protocol (RESP) server with a real-time changefeed, Prometheus metrics, Docker, and deterministic simulation testing.</li>
         </ul>
         <div class="project-links">
           <a href="https://github.com/yabtesfu/imustore-db-" target="_blank" rel="noopener" class="proj-btn"><i class="fab fa-github"></i> GitHub</a>
