@@ -128,9 +128,9 @@ section {
 .cursor-dot {
   position: fixed;
   top: 0; left: 0;
-  width: 10px; height: 10px;
+  width: 7px; height: 7px;
   border-radius: 50%;
-  background: var(--accent);
+  background: #86efac;
   opacity: 1;
   pointer-events: none;
   z-index: 9998;
@@ -138,7 +138,8 @@ section {
   will-change: transform;
   transition: opacity 0.35s ease, width 0.2s ease, height 0.2s ease;
 }
-.cursor-dot.hovering { width: 15px; height: 15px; opacity: 1; }
+.cursor-dot.hovering { width: 10px; height: 10px; opacity: 1; }
+body.light-theme .cursor-dot { background: #2f9e44; }
 @media (hover: none), (max-width: 768px) {
   .cursor-dot { display: none; }
 }
@@ -1337,35 +1338,36 @@ nav a:hover::after, nav a.active::after { width: 100%; }
 .contact-section .section-head {
   margin-left: auto; margin-right: auto;
   text-align: center; max-width: 720px;
+  margin-bottom: 2.6rem;
 }
 
 .contact-card {
-  max-width: 720px;
+  max-width: 640px;
   margin: 0 auto;
-  padding: 4.5rem 4rem;
+  padding: 3rem 3rem 2.8rem;
   border: 1px solid var(--border);
-  border-radius: 2rem;
+  border-radius: 1.8rem;
   background: var(--bg-card);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3rem;
+  gap: 1.8rem;
   transition: border-color 0.3s ease;
 }
 .contact-card:hover { border-color: var(--accent-bdr); }
 .contact-line {
-  font-size: 1.6rem;
-  line-height: 1.7;
+  font-size: 1.55rem;
+  line-height: 1.65;
   color: var(--text-2);
-  max-width: 460px;
+  max-width: 420px;
 }
 .contact-icons {
   display: flex;
   align-items: center;
-  gap: 3.2rem;
+  gap: 1.8rem;
 }
 .contact-icons a {
-  font-size: 2.3rem;
+  font-size: 2.1rem;
   color: var(--text-2);
   line-height: 1;
   transition: color 0.25s ease, transform 0.25s ease;
@@ -1375,17 +1377,15 @@ nav a:hover::after, nav a.active::after { width: 100%; }
   transform: translateY(-4px);
 }
 .contact-email {
-  font-size: 1.6rem;
+  font-size: 1.55rem;
   color: var(--text);
   text-decoration: underline;
+  text-decoration-color: var(--text);
+  text-decoration-thickness: 1.5px;
   text-underline-offset: 4px;
-  text-decoration-color: var(--border);
-  transition: color 0.25s ease, text-decoration-color 0.25s ease;
+  transition: opacity 0.25s ease;
 }
-.contact-email:hover {
-  color: var(--accent);
-  text-decoration-color: var(--accent);
-}
+.contact-email:hover { opacity: 0.7; }
 
 /* =============================================
    FOOTER
