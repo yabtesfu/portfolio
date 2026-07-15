@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <style>
+    .bg   { fill: #0b0b0d; transition: fill .35s ease; }
+    .tile { fill: #9be000; transition: fill .35s ease; }
+    .dot  { fill: #2f6a00; transition: fill .35s ease; }
+    @media (prefers-color-scheme: light) {
+      .bg   { fill: #ffffff; }
+      .tile { fill: #3f7a00; }
+      .dot  { fill: #9be000; }
+    }
+  </style>
+  <rect class="bg" width="512" height="512" rx="120"/>
+  <rect class="tile" x="92"  y="92"  width="150" height="150" rx="40"/>
+  <rect class="tile" x="270" y="92"  width="150" height="150" rx="40"/>
+  <rect class="tile" x="92"  y="270" width="150" height="150" rx="40"/>
+  <circle class="dot" cx="345" cy="345" r="75"/>
+</svg>

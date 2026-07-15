@@ -56,13 +56,13 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 
-/* ---------- THEME TOGGLE + THEME-ADAPTIVE FAVICON ---------- */
+/* ---------- THEME TOGGLE ---------- */
 const themeToggle = document.getElementById('theme-toggle');
-const faviconLink = document.getElementById('favicon');
 const themeColorMeta = document.querySelector('meta[name="theme-color"]');
 
+/* Favicon adapts to the system theme on its own (favicon.svg); only the
+   mobile browser-UI theme-color follows the in-page toggle. */
 function applyThemeChrome(isLight) {
-  if (faviconLink) faviconLink.href = isLight ? 'favicon-light.svg' : 'favicon-dark.svg';
   if (themeColorMeta) themeColorMeta.setAttribute('content', isLight ? '#f6f6f4' : '#09090b');
 }
 

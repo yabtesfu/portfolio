@@ -657,9 +657,9 @@ nav a:hover::after, nav a.active::after { width: 100%; }
    ============================================= */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 2rem;
-  max-width: 1100px;
+  max-width: 920px;
   margin: 0 auto;
 }
 #projects .section-head {
@@ -766,6 +766,7 @@ nav a:hover::after, nav a.active::after { width: 100%; }
   color: var(--text); margin-bottom: 1rem;
   transition: color 0.3s ease;
 }
+.project-card h3 span { color: var(--accent); }
 .project-card:hover h3 { color: var(--accent); }
 .project-card p {
   font-size: 1.45rem; line-height: 1.78;

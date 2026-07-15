@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Yabetse Tesfaye | AI Systems & Infrastructure Engineer</title>
 
-  <!-- Favicon (theme-adaptive, swapped in script.js) -->
-  <link id="favicon" rel="icon" href="favicon-dark.svg" type="image/svg+xml" />
+  <!-- Favicon (single SVG that adapts to system light/dark) -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <meta name="theme-color" content="#09090b" />
 
   <!-- Fonts: Arvo (site) + Dancing Script (signature logo) -->
@@ -166,70 +166,38 @@
         </div>
       </div>
 
-      <!-- Kuas Meda -->
+      <!-- RustV OS Lab -->
       <div class="project-card reveal" data-delay="200">
-        <h3>Kuas Meda</h3>
-        <p class="proj-desc">A full-stack football field booking and player-matching platform for Addis Ababa.</p>
+        <h3>RustV OS Lab</h3>
+        <p class="proj-desc">A bare-metal RISC-V operating-system kernel written from scratch in Rust, booting on QEMU with no firmware.</p>
         <div class="proj-chips">
-          <span>Next.js</span><span>Full-Stack</span><span>Role-Based Access</span><span>Vercel</span>
+          <span>Rust</span><span>RISC-V</span><span>Bare-Metal (no_std)</span><span>RISC-V Assembly</span><span>QEMU</span>
         </div>
         <ul class="proj-bullets">
-          <li>Players browse fields, view open groups, apply to join matches, and manage upcoming sessions.</li>
-          <li>Organizers create sessions and manage applicants; field operators manage fields, slots, and daily schedules.</li>
-          <li>Admin views and role-based access, with a foundation for payments, ratings, and smart matching.</li>
+          <li>Preemptive multitasking: a CLINT timer-interrupt scheduler round-robins tasks with full context switching in hand-written assembly.</li>
+          <li>Sv39 virtual memory and user-mode syscalls over the ecall boundary; the MMU traps illegal accesses and kills only the offending task.</li>
+          <li>A virtio-blk driver, a custom TinyFS filesystem, and an interactive UART shell, all CI-tested by booting headless in QEMU.</li>
         </ul>
         <div class="project-links">
-          <a href="https://kuas-meda.vercel.app/" target="_blank" rel="noopener" class="proj-btn"><i class="fas fa-external-link-alt"></i> Live Site</a>
-          <a href="https://github.com/yabtesfu/kuas-meda" target="_blank" rel="noopener" class="proj-btn"><i class="fab fa-github"></i> GitHub</a>
+          <a href="https://github.com/yabtesfu/rustv-os-lab" target="_blank" rel="noopener" class="proj-btn"><i class="fab fa-github"></i> GitHub</a>
         </div>
       </div>
 
-      <!-- Wedding Website -->
+      <!-- Gebeta -->
       <div class="project-card reveal" data-delay="0">
-        <h3>Wedding Website</h3>
-        <p class="proj-desc">A wedding invitation and RSVP site used at a real wedding.</p>
+        <h3><span>ገበጣ</span> Gebeta</h3>
+        <p class="proj-desc">A traditional Ethiopian mancala, playable against a real AI on the desktop or in your browser.</p>
         <div class="proj-chips">
-          <span>Next.js</span><span>Firebase</span><span>Telegram API</span>
+          <span>Java</span><span>Swing</span><span>Gradle</span><span>JUnit 5</span><span>TypeScript</span><span>Vite</span><span>GitHub Actions</span>
         </div>
         <ul class="proj-bullets">
-          <li>Real-time RSVP handling with Firebase and instant Telegram notifications.</li>
-          <li>Deployed and actively used by guests at a live wedding celebration.</li>
-        </ul>
-        <div class="project-links">
-          <a href="https://desuandtsiwedding.vercel.app/" target="_blank" rel="noopener" class="proj-btn"><i class="fas fa-external-link-alt"></i> Live Site</a>
-          <a href="https://github.com/yabtesfu/Wedding-Website" target="_blank" rel="noopener" class="proj-btn"><i class="fab fa-github"></i> GitHub</a>
-        </div>
-      </div>
-
-      <!-- Gebeta Game -->
-      <div class="project-card reveal" data-delay="100">
-        <h3>Gebeta Game</h3>
-        <p class="proj-desc">A traditional Ethiopian mancala game for the desktop.</p>
-        <div class="proj-chips">
-          <span>Java</span><span>JavaFX</span><span>OOP</span>
-        </div>
-        <ul class="proj-bullets">
-          <li>Desktop game built with JavaFX and a clean object-oriented design.</li>
-          <li>Demonstrates encapsulation, inheritance, abstraction, and polymorphism.</li>
+          <li>Face a real minimax opponent: alpha-beta pruning at three depths that chains free turns and lines up captures while stones sow with sound.</li>
+          <li>Save and resume any game, keep a running win record, and play the very same rules on desktop or on the web.</li>
+          <li>One pure rules engine powers both apps, backed by 42 tests and continuous integration; ships as a native installer and a browser build.</li>
         </ul>
         <div class="project-links">
           <a href="https://github.com/yabtesfu/Gebeta-Game" target="_blank" rel="noopener" class="proj-btn"><i class="fab fa-github"></i> GitHub</a>
-        </div>
-      </div>
-
-      <!-- Chessline -->
-      <div class="project-card reveal" data-delay="200">
-        <h3>Chessline Web App</h3>
-        <p class="proj-desc">A chess-learning platform (frontend contribution).</p>
-        <div class="proj-chips">
-          <span>Next.js</span><span>Tailwind CSS</span><span>SEO</span>
-        </div>
-        <ul class="proj-bullets">
-          <li>Built responsive frontend components as an assistant developer on a production team.</li>
-          <li>Translated Figma designs into pixel-perfect, SEO-optimized pages.</li>
-        </ul>
-        <div class="project-links">
-          <a href="https://chessline.io" target="_blank" rel="noopener" class="proj-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          <a href="https://yabtesfu.github.io/Gebeta-Game/" target="_blank" rel="noopener" class="proj-btn"><i class="fas fa-play"></i> Play in browser</a>
         </div>
       </div>
 
